@@ -29,39 +29,50 @@ require 'header.php';
 											</td></tr>
 										</tbody>
 									</table>
+										<?php
+										if ($_SERVER['REQUEST_METHOD'] == 'POST') {                                //#1
+										require('process-login.php');
+										} // End of the main Submit conditional.
+										?>
 									<table class="middle-table">
 										<tr><td valign="middle" align="center">
 											<table class="middle-table-center">
-												<tbody>
-													<tr>
-														<td class="info" align="right" >Tài khoản: &nbsp;</td>
-														<td>
-															<input type="text" name="acc">
-														</td>
-													</tr>
-													<tr>
-														<td class="info" align="right">Mật khẩu: &nbsp;</td>
-														<td>
-															<input type="password" name="pass">
-														</td>
-													</tr>
-													<tr>
-														
-														<td class="info">
-															<input type="submit" name="" value="Đăng nhập">
-														</td>
-														
-														<td class="info">
-															<input type="submit" name="" value="Về trang chủ">
-														</td>
-														
-													</tr>
-													<tr>
-														<td class="info" colspan="2" align="center">
-															<a href="">[ Quên mật khẩu ]</a>
-														</td>
-													</tr>
-												</tbody>
+												<form action="login.php" method="post" name="loginform" id="loginform">
+													<tbody>
+														<tr>
+															<td class="info" align="right" >Tài khoản: &nbsp;</td>
+															<td>
+															<input type="text" class="form-control" id="email" name="email" placeholder="Email"
+																	maxlength="30" required
+																	value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>">
+															</td>
+														</tr>
+														<tr>
+															<td class="info" align="right">Mật khẩu: &nbsp;</td>
+															<td>
+															<input type="password" class="form-control" id="password" name="password"
+																	placeholder="Password" maxlength="40" required
+																	value="<?php if (isset($_POST['password'])) echo $_POST['password']; ?>">
+															</td>
+														</tr>
+														<tr>
+															
+															<td class="form-group row">
+																<input id="submit" class="btn btn-primary" type="submit" name="submit" value="Đăng nhập">
+															</td>
+															
+															<td class="form-group row">
+																<input type="submit" name="" value="Về trang chủ">
+															</td>
+															
+														</tr>
+														<tr>
+															<td class="info" colspan="2" align="center">
+																<a href="">[ Quên mật khẩu ]</a>
+															</td>
+														</tr>
+													</tbody>
+												</form>
 											</table>
 										</td></tr>
 									</table>
