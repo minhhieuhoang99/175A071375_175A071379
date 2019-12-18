@@ -1,0 +1,147 @@
+.carousel-indicators li {
+  width: 30px;
+  height: 5px;
+  border-radius: 15px;
+}
+.mt-20 {
+  margin-top: 30px;
+}
+footer {
+  height: 80px;
+  margin-top: 50px;
+}
+footer > .container,
+footer .row {
+  height: 100%;
+}
+
+.card {
+  height: 100%;
+}
+.col-4 {
+  margin-bottom: 30px;
+}
+.col-6 {
+  max-width: 30%;
+}
+#add {
+  width: 40%;
+  text-align: center;
+}
+
+.main .wrapper {
+  display: flex;
+}
+main #center {
+  width: 50%;
+}
+h2 {
+  font-family: Proxima;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 40px 0 15px;
+}
+article h3 {
+  font-family: Proxima;
+  font-weight: 300;
+  font-size: 25px;
+}
+.right-sidebar {
+  width: 23%;
+}
+img {
+  width: 100%;
+}
+article {
+  display: flex;
+  margin-bottom: 50px;
+}
+.article-left {
+  width: 40%;
+}
+.article-left img {
+  border-radius: 30px 10px 10px 30px;
+}
+.article-right {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  justify-content: space-between;
+}
+.article-right .meta {
+  margin: 18px 0;
+}
+.article-right .additional {
+  margin-top: 18px;
+}
+.meta {
+  font-family: Roboto;
+  font-weight: 300;
+  color: #999999;
+  font-size: 13px;
+}
+.meta span::after {
+  display: inline-block;
+  content: "|";
+  color: #999999;
+  font-size: 13px;
+  margin-left: 3px;
+}
+.meta span:last-child::after {
+  display: none;
+}
+.category {
+  color: #e3b002;
+}
+.description {
+  color: #555555;
+  font-size: 16px;
+  font-family: Proxima;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.description::after {
+  content: ">";
+  color: #e3b002;
+}
+.additional {
+  color: #999999;
+  font-size: 13px;
+  font-family: Roboto;
+  font-size: 300;
+}
+.views::before,
+.comments::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+}
+.views::before {
+  content: "\f06e";
+}
+.views::after {
+  content: "|";
+  margin: 0 10px;
+}
+.comments {
+  color: #e3b002;
+}
+.comments::before {
+  content: "\f075";
+  color: #999999;
+}
+.more {
+  width: 170px;
+  height: 42px;
+  background: transparent;
+  color: black;
+  font-family: Roboto;
+  text-transform: uppercase;
+  border: 1px solid #e3b002;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
