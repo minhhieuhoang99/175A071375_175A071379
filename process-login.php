@@ -13,7 +13,7 @@ try {
 		$errors[] = ' or the e-mail format is incorrect.';
 	}
     // Validate the password
-	    $password = filter_var( $_POST['password'], FILTER_SANITIZE_STRING);	
+	    $password = filter_var( $_POST['password'],FILTER_SANITIZE_STRING);	
 	if (empty($password)) {
 		$errors[] = 'You forgot to enter your password.';
 	}
