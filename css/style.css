@@ -1,7 +1,14 @@
+body {
+  background-color: #f1f1f2;
+}
+
 .carousel-indicators li {
-  width: 30px;
-  height: 5px;
+  width: 25px;
+  height: 8px;
   border-radius: 15px;
+}
+.carousel {
+  z-index: 0;
 }
 .mt-20 {
   margin-top: 30px;
@@ -10,11 +17,14 @@ footer {
   height: 80px;
   margin-top: 50px;
 }
+
 footer > .container,
 footer .row {
   height: 100%;
 }
-
+.body {
+  background-color: #f1f1f2;
+}
 .card {
   height: 100%;
 }
@@ -29,27 +39,45 @@ footer .row {
   text-align: center;
 }
 
-.main .wrapper {
+main .wrapper {
   display: flex;
 }
-main #center {
+main .center-sidebar {
   width: 50%;
+  margin-top: 40px;
 }
 h2 {
   font-family: Proxima;
   font-weight: bold;
   font-size: 24px;
-  margin: 40px 0 15px;
+  margin: 40px 5px 15px;
+  background-color: #bcbabe;
+  border-radius: 5px;
+  height: 40px;
+  text-align: center;
 }
 article h3 {
   font-family: Proxima;
   font-weight: 300;
   font-size: 25px;
 }
-.right-sidebar {
-  width: 23%;
+main .right-sidebar {
+  width: 25%;
+  text-align: center;
+  padding-left: 20px;
 }
-img {
+
+main .right-sidebar .left-sidebar-header {
+  background-color: #bcbabe;
+}
+main .left-sidebar {
+  width: 25%;
+  text-align: center;
+  padding-right: 20px;
+  list-style: none;
+}
+
+.article-left img {
   width: 100%;
 }
 article {
@@ -60,7 +88,7 @@ article {
   width: 40%;
 }
 .article-left img {
-  border-radius: 30px 10px 10px 30px;
+  border-radius: 10px;
 }
 .article-right {
   width: 60%;
@@ -111,26 +139,7 @@ article {
   font-family: Roboto;
   font-size: 300;
 }
-.views::before,
-.comments::before {
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  margin-right: 10px;
-}
-.views::before {
-  content: "\f06e";
-}
-.views::after {
-  content: "|";
-  margin: 0 10px;
-}
-.comments {
-  color: #e3b002;
-}
-.comments::before {
-  content: "\f075";
-  color: #999999;
-}
+
 .more {
   width: 170px;
   height: 42px;
@@ -144,4 +153,20 @@ article {
   text-align: center;
   margin: 0 auto;
   display: block;
+}
+.dropdown > .dropdown-menu {
+  top: 200%;
+  transition: 0.3s all ease-in-out;
+}
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  top: 100%;
+}
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+footer {
+  background-color: #a1d6e2;
 }

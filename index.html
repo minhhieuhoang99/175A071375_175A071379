@@ -16,9 +16,10 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
+      <nav class="navbar navbar-expand-lg navbar-light  " >
         <div class="container">
-          <a class="navbar-brand" href="#">Let's Travel</a>
+        <a class="navbar-brand" href="#">Logo</a>
           <button
             class="navbar-toggler d-lg-none"
             type="button"
@@ -33,15 +34,46 @@
           <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
-                <a class="nav-link" href="#"
-                  >Home <span class="sr-only">(current)</span></a
-                >
+                <a class="navbar-brand" href="#">
+                  <img src="images/home.png" width="30" height="30" alt="">
+                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  GIỚI THIỆU
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacts</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  TUYỂN SINH
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ĐÀO TẠO
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  NGHIÊN CỨU
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </div>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -58,7 +90,7 @@
               </button>
             </form>
           </div>
-        </div>
+          </div>
       </nav>
     </header>
     <main>
@@ -137,10 +169,19 @@
           </a>
         </div>
 
-        <!-- Card-->
-        
-        <div class="container" id="center" >
-            <h2>Bài Viết Gần Đây</h2>
+        <!-- Main-->
+        <div class="wrapper">
+          <div class="left-sidebar">
+            <h2>Danh Mục Chính</h2>
+            <ul class="list-group">
+              
+              <li class="list-group-item"><a href="#" >Tra Cứu Lịch</a></li>
+              <li class="list-group-item"><a href="#" >Chương Trình Đào Tạo</a></li>
+              <li class="list-group-item"><a href="#" >Giảng Đường Trực Tuyến</a></li>
+            </ul>
+          </div>
+        <div class="center-sidebar"  >
+            
               <div class="articles">
                   <article>
                       <div class="article-left">
@@ -205,6 +246,12 @@
               </div>
               <button class="more">Bài Viết Khác</button>
         </div>
+        <div class="right-sidebar">
+          <h2 class="right-sidebar-header">Đăng Nhập</h2>
+        </div>
+        </div>
+        
+
     </main>
 
     
@@ -218,7 +265,7 @@
     
     
     
-    <footer class="bg-light">
+    <footer>
       <div class="container">
         <div class="row">
           <div class="col-6 d-flex  align-items-center">
@@ -227,7 +274,7 @@
           <div id="add"></div>
           <div class="col-6 d-flex justify-content-end align-items-center">
             <button
-              class="btn btn-primary"
+              class="btn btn-light"
               data-toggle="modal"
               data-target="#myModal"
             >
