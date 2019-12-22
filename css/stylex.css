@@ -15,6 +15,17 @@ header {
   border-radius: 0 0 10px 10px;
   margin: 0 5px;
 }
+footer {
+  background-color: #bcbabe;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 3fr;
