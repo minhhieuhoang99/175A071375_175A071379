@@ -1,28 +1,28 @@
 
-
+<?php require('mysqli_connect.php'); ?>
 <?php
 
 // php select option value from database
 
-$hostname = "localhost";
-$username = "root";
-$password = "";
-$databaseName = "logintest";
+// $hostname = "localhost";
+// $username = "root";
+// $password = "";
+// $databaseName = "logintest";
 
-// connect to mysql database
+// // connect to mysql database
 
-$connect = mysqli_connect($hostname, $username, $password, $databaseName);
+// $connect = mysqli_connect($hostname, $username, $password, $databaseName);
 
 // mysql select query
 $query = "SELECT * FROM `users`";
 $query1 = "SELECT `userid` FROM `users`";
 // for method 1
 
-$result1 = mysqli_query($connect, $query);
+$result1 = mysqli_query($dbcon, $query);
 
 // for method 2
 
-$result2 = mysqli_query($connect, $query1);
+$result2 = mysqli_query($dbcon, $query1);
 
 $options = "";
 

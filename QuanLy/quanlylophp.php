@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>QuanLy</title>
+    <title>QuanLyLopMon</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -68,10 +68,7 @@
               <a href="../QuanLy/quanlymon.php">Quản lý môn</a>
             </li>
             <li class="list-group-item ">
-              <a
-                href="../QuanLy/quanlylophp.php"
-                data-toggle="collapse"
-                data-parent="#SubMenu1"
+              <a href="../QuanLy/quanlylophp.php" data-toggle="collapse" data-parent="#SubMenu1"
                 >Quản lý lớp học</a
               >
               <div class="collapse list-group-submenu" id="SubMenu1">
@@ -95,9 +92,37 @@
             </li>
           </ul>
         </div>
-        <div class="grid-item item2"></div>
-        <div class="grid-item item3"></div>
-      </div>
+        <div class="grid-item item2">
+          <div class="grid-container-table">
+            <div class="item item-table1"><h3 >TẠO LỚP MÔN HỌC</h3></div>
+            <div class="item item-table2"><p>Mã lớp học phần:</p></div>
+            <div class="item item-table3">
+              <input type="text" name="FirstName" value="" class="textbox" />
+            </div>
+            <div class="item item-table2"><p>Năm học:</p> </div>
+            <div class="item item-table3">
+              <input type="text" name="LastName" value="" maxlength="4" class="textbox" minlength="4" maxlength="4"/>
+            </div>
+            <div class="item item-table2"><p>Học kì:</p> </div>
+            <div class="item item-table3">
+                <select class="select" name="cars" style="width: 300px;">
+                    <option class="select" value="volvo">HK I</option class="select">
+                    <option class="select" value="saab">HK II</option>
+                    <option class="select" value="fiat">HK Bổ sung</option>
+                  
+                  </select>
+            </div>
+            <div class="item item-table2"><p>Giai đoạn:</p> </div>
+            <div class="item item-table3">
+                Bắt đầu: <input type="date" name="bday">
+                Kết thúc: <input type="date" name="bday">
+            </div>
+            <div class="item item-table4" style="text-align: center;">
+              <input type="submit" class="submit" value="Xác nhận" />
+            </div>
+          </div>
+          </div>
+
     </main>
     <footer>
       <div><h2>© 2019 - TRƯỜNG ĐẠI HỌC THỦY LỢI</h2></div>

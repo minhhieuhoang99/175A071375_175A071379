@@ -50,11 +50,11 @@ if (mysqli_num_rows($result) == 1) {
                     //           header('Location: ' . $url);           
                     $_SESSION['CapDo'] = $row[3];
 
-                    if($row[3]==2)
+                    if($row[3]==3)
                     header('Location: GiangVien/giangvien.php');
                     else if($row[3]==1)
-                    header('Location: admin/admin.php');
-                    else if($row[3]==3)
+                    header('Location: admin/admin-page.php');
+                    else if($row[3]==2)
                     header('Location: QuanLy/quanly.php');
                     else
                     header('Location: index.php');

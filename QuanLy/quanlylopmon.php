@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>QuanLy</title>
+    <title>QuanLyLopMon</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -68,10 +68,7 @@
               <a href="../QuanLy/quanlymon.php">Quản lý môn</a>
             </li>
             <li class="list-group-item ">
-              <a
-                href="../QuanLy/quanlylophp.php"
-                data-toggle="collapse"
-                data-parent="#SubMenu1"
+              <a href="../QuanLy/quanlylophp.php" data-toggle="collapse" data-parent="#SubMenu1"
                 >Quản lý lớp học</a
               >
               <div class="collapse list-group-submenu" id="SubMenu1">
@@ -95,9 +92,41 @@
             </li>
           </ul>
         </div>
-        <div class="grid-item item2"></div>
-        <div class="grid-item item3"></div>
-      </div>
+        <div class="grid-item item2">
+          <div class="grid-container-table">
+            <div class="item item-table1"><h3 >TẠO LỚP MÔN HỌC</h3></div>
+            <div class="item item-table2"><p>Tên lớp môn:</p></div>
+            <div class="item item-table3">
+              <input type="text" name="FirstName" value="" class="textbox" />
+            </div>
+            <div class="item item-table4"><p>Mã lớp môn:</p> </div>
+            <div class="item item-table5">
+              <input type="text" name="LastName" value="" maxlength="10" class="textbox" />
+            </div>
+            <div class="item item-table6"><p>Mã ngành:</p> </div>
+            <div class="item item-table7">
+                <select name="cars" style="width: 300px;">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                  </select>
+            </div>
+            <div class="item item-table8"><p>Tên môn:</p> </div>
+            <div class="item item-table9">
+              <select name="cars" style="width: 300px;">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div>
+            <div class="item item-table10" style="text-align: center;">
+              <input type="submit" class="submit" value="Xác nhận" />
+            </div>
+          </div>
+          </div>
+
     </main>
     <footer>
       <div><h2>© 2019 - TRƯỜNG ĐẠI HỌC THỦY LỢI</h2></div>

@@ -1,7 +1,29 @@
+<?php require_once("../includes/mysqli_connect.php"); ?>
+<?php
+	
+    $message = '';
+	if (isset($_POST["tao_nganh"])) {
+		//lấy thông tin từ các form bằng phương thức POST
+		$MaNganh = $_POST["MaNganh"];
+		$TenNganh = $_POST["TenNganh"];
+		        
+
+		$sql = "INSERT INTO nganh VALUES ('$MaNganh', '$TenNganh')";
+		// thực thi câu $sql với biến dbcon lấy từ file connection.php
+        mysqli_set_charset($dbcon,$sql);
+        mysqli_query($dbcon,$sql);
+        
+        
+		$message = '<label class="text-success">Tạo ngành học thành công</label>';
+		
+	}
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>QuanLy</title>
+    <title>QuanLyNganh</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -68,10 +90,7 @@
               <a href="../QuanLy/quanlymon.php">Quản lý môn</a>
             </li>
             <li class="list-group-item ">
-              <a
-                href="../QuanLy/quanlylophp.php"
-                data-toggle="collapse"
-                data-parent="#SubMenu1"
+              <a href="../QuanLy/quanlylophp.php" data-toggle="collapse" data-parent="#SubMenu1"
                 >Quản lý lớp học</a
               >
               <div class="collapse list-group-submenu" id="SubMenu1">
@@ -95,9 +114,27 @@
             </li>
           </ul>
         </div>
-        <div class="grid-item item2"></div>
-        <div class="grid-item item3"></div>
-      </div>
+        <div class="grid-item item2">
+          <div class="grid-container-table"  >
+              <form action="quanlynganh.php" method="POST">
+                  <div class="item item-table1"><h3 >TẠO NGÀNH HỌC</h3></div>
+                  <div class="form-group">
+                      <div class="item item-table2"><p>Tên ngành:</p></div>
+                      <div class="item item-table3"><input type="text"  value=""  name="TenNganh" class="form-control" required  /></div>
+                  </div> 
+                  <div class="form-group"> 
+                      <div class="item item-table4"><p>Mã ngành:</p></div>
+                      <div class="item item-table5"><input type="text"  value="" maxlength="10" name="MaNganh" class="form-control" required /></div></div> 
+                  <div class="form-group"> 
+                      <div class="item item-table6" style="text-align: center;">
+                      <input type="submit" class="submit" name="tao_nganh"  value="Tạo ngành" />            </div>          
+                  </div> 
+                  <?php echo $message; ?>              
+					    </form>
+              </div>              
+            </div>            
+          
+
     </main>
     <footer>
       <div><h2>© 2019 - TRƯỜNG ĐẠI HỌC THỦY LỢI</h2></div>
@@ -115,3 +152,6 @@
     <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>
+
+
+
