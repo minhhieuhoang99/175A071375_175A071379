@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    if (empty($errors)) { // If everything's OK.         #1
 // Retrieve the user_id, psword, first_name and user_level for that
 // email/password combination
- $query = "SELECT MaTK, MatKhau, NgayTao, CapDo FROM taikhoan WHERE email=?";
+ $query = "SELECT userid, password, first_name, user_level FROM users WHERE email=?";
       $q = mysqli_stmt_init($dbcon);
       mysqli_stmt_prepare($q, $query);
 
@@ -48,13 +48,13 @@ if (mysqli_num_rows($result) == 1) {
                     //           $url = ($_SESSION['user_level'] === 1) ? 'admin-page.php' :
                     //           'members-page.php'; 
                     //           header('Location: ' . $url);           
-                    $_SESSION['CapDo'] = $row[3];
+                    $_SESSION['user_level'] = $row[3];
 
                     if($row[3]==2)
                     header('Location: GiangVien/giangvien.php');
                     else if($row[3]==1)
                     header('Location: admin/admin.php');
-                    else if($row[3]==3)
+                    else if($row[3]==0)
                     header('Location: QuanLy/quanly.php');
                     else
                     header('Location: index.php');
@@ -67,9 +67,9 @@ if (mysqli_num_rows($result) == 1) {
                   $errors[] = 'button on the header menu';
                   } 
 } else { // No e-mail match was made.
- $errors[] = 'E-mail/Password entered does not match our records. ';
- $errors[] = 'Perhaps you need to register, just click the Register ';
- $errors[] = 'button on the header menu';
+// $errors[] = 'E-mail/Password entered does not match our records. ';
+// $errors[] = 'Perhaps you need to register, just click the Register ';
+// $errors[] = 'button on the header menu';
 }
 } 
 if (!empty($errors)) {                     
