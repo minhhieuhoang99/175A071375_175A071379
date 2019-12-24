@@ -4,62 +4,51 @@ h2 {
   font-size: 24px;
   margin: 25px 10px 30px;
   height: 45px;
-  text-align: left;
+  text-align: center;
+}
+h3 {
+  margin-left: 20px;
   text-align: center;
 }
 body {
   background-color: #f1f1f2;
+  height: 100%;
 }
 header {
-  background-color: #bcbabe;
+  background-color: #a1d6e2;
   border-radius: 0 0 10px 10px;
   margin: 0 5px;
 }
+main {
+  height: 100%;
+}
 footer {
-  background-color: #bcbabe;
-  border-radius: 10px 10px 0 0;
-  margin-bottom: 0px;
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%;
+  background-color: #a1d6e2;
+  border-radius: 10px 10px 0 0;
   color: white;
   text-align: center;
+  width: 100%;
 }
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 3fr;
   padding: 10px;
+  grid-gap: 20px;
 }
 .grid-container-header {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   padding: 10px;
 }
-body {
-  background-color: ;
-}
+
 main {
   padding-top: 10px;
+  height: 100%;
 }
-.item1 {
-  background-color: #fd8471;
-}
-.item2 {
-  background-color: #68e972;
-}
-.item3 {
-  background-color: #64e0d5;
-}
-.item4 {
-  background-color: #67a1eb;
-}
-.item5 {
-  background-color: #7267ea;
-}
-.item6 {
-  background-color: #cc67eb;
-}
+
 #box_user {
   position: absolute;
   right: 5px;
@@ -74,4 +63,31 @@ main {
   margin-right: 5px;
   color: blue;
   font-size: 12px;
+}
+.list-group-item {
+  border: none;
+}
+.input {
+  margin: 10px;
+}
+.grid-container-table {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
+.grid-container-table p {
+  font-size: 20px;
+}
+.item-table1 {
+  grid-column: 1 / 3;
+}
+.item-table6 {
+  grid-column: 1/ 3;
+}
+.submit {
+  background-color: #1995ad;
+  border-radius: 10px;
+  color: #f1f1f2;
+  margin-left: 50px;
 }
