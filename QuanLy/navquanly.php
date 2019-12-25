@@ -22,7 +22,7 @@
                   >Lớp môn học</a
                 >
                 <a
-                  href="../QuanLy/quanlylopmon.php"
+                  href="../QuanLy/quanlylophp.php"
                   class="list-group-item"
                   data-parent="#SubMenu1"
                   
