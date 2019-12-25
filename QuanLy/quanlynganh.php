@@ -1,24 +1,5 @@
 <?php require_once("../includes/mysqli_connect.php"); ?>
-<?php
-	
-    $message = '';
-	if (isset($_POST["tao_nganh"])) {
-		//lấy thông tin từ các form bằng phương thức POST
-		$MaNganh = $_POST["MaNganh"];
-		$TenNganh = $_POST["TenNganh"];
-		        
-
-		$sql = "INSERT INTO nganh VALUES ('$MaNganh', '$TenNganh')";
-		// thực thi câu $sql với biến dbcon lấy từ file connection.php
-        mysqli_set_charset($dbcon,$sql);
-        mysqli_query($dbcon,$sql);
-        
-        
-		$message = '<label class="text-success">Tạo ngành học thành công</label>';
-		
-	}
-    
-?>
+<?php require ('tao_nganh.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,42 +59,7 @@
     </header>
     <main>
       <div class="grid-container">
-        <div class="grid-item item1">
-          <ul class="list-group">
-            <li class="list-group-item " style="text-align: center;">
-              <p style="margin:auto">MAIN MENU</p>
-            </li>
-            <li class="list-group-item ">
-              <a href="../QuanLy/quanlynganh.php">Quản lý ngành học</a>
-            </li>
-            <li class="list-group-item ">
-              <a href="../QuanLy/quanlymon.php">Quản lý môn</a>
-            </li>
-            <li class="list-group-item ">
-              <a href="../QuanLy/quanlylophp.php" data-toggle="collapse" data-parent="#SubMenu1"
-                >Quản lý lớp học</a
-              >
-              <div class="collapse list-group-submenu" id="SubMenu1">
-                <a
-                  href="../QuanLy/quanlylopmon.php"
-                  class="list-group-item"
-                  data-parent="#SubMenu1"
-                  style="margin-top: 5px;"
-                  >Lớp môn học</a
-                >
-                <a href="#" class="list-group-item" data-parent="#SubMenu1"
-                  >Lớp học phần</a
-                >
-              </div>
-            </li>
-            <li class="list-group-item ">
-              <a href="#">Sắp xếp lịch trình</a>
-            </li>
-            <li class="list-group-item ">
-              <a href="#">Quản lý giảng viên</a>
-            </li>
-          </ul>
-        </div>
+      <?php require ('navquanly.php');?>
         <div class="grid-item item2">
           <div class="grid-container-table"  >
               <form action="quanlynganh.php" method="POST">

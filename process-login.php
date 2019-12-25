@@ -67,9 +67,9 @@ if (mysqli_num_rows($result) == 1) {
                   $errors[] = 'button on the header menu';
                   } 
 } else { // No e-mail match was made.
- $errors[] = 'E-mail/Password entered does not match our records. ';
- $errors[] = 'Perhaps you need to register, just click the Register ';
- $errors[] = 'button on the header menu';
+ //$errors[] = 'E-mail/Password entered does not match our records. ';
+ //$errors[] = 'Perhaps you need to register, just click the Register ';
+ //$errors[] = 'button on the header menu';
 }
 } 
 if (!empty($errors)) {                     
