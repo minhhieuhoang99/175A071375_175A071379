@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>QuanLyGiangVien</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/stylex.css" />
+  </head>
+  <body>
+    <header>
+      <div class="grid-container-header">
+        <div class="grid-item">
+          <img
+            height="58"
+            width="351"
+            style="transform: translate(5%, 30%); "
+            src="../images/logo.png"
+            alt="logo"
+          />
+        </div>
+        <div class="grid-item">
+          <div>
+            <h2>
+              CỔNG THÔNG TIN ĐÀO TẠO <br />
+              ĐẠI HỌC THỦY LỢI
+            </h2>
+          </div>
+        </div>
+        <div class="grid-item"></div>
+      </div>
+
+      <div id="box_user">
+        <div id="PageHeader_Panel">
+          <p>
+            <span id="PageHeader_lblUserFullName" style="font-weight:bold;"
+              >Đinh Việt Đức(175A071379)</span
+            >
+            <span
+              id="PageHeader_lblRoleTitle "
+              style="color: #bcbabe; font-size: 15px;"
+              >Vai trò:</span
+            >
+            <span id="PageHeader_lblUserRole">Giảng viên</span>
+
+            <a id="PageHeader_lbNewmessage" href="#">Hộp tin nhắn</a>
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="grid-container">
+        <div class="grid-item item1">
+          <ul class="list-group panel">
+            <li class="list-group-item " style="text-align: center;">
+              <p style="margin:auto">MAIN MENU</p>
+            </li>
+            <li class="list-group-item ">
+              <a href="#SubMenu2" data-toggle="collapse" data-parent="#SubMenu2"
+                >Quản lý ngành học</a
+              >
+              <div class="collapse list-group-submenu" id="SubMenu2">
+                <a
+                  href="../quanly/quanlynganh.html"
+                  class="list-group-item"
+                  data-parent="#SubMenu1"
+                  style="margin-top: 15px;"
+                  >Tạo ngành học</a
+                >
+                <a
+                  href="#"
+                  class="list-group-item"
+                  data-parent="#SubMenu2"
+                  style="margin-top: 5px;"
+                >
+                  Cập nhật ngành học</a
+                >
+              </div>
+            </li>
+            <li class="list-group-item ">
+              <a href="#SubMenu3" data-toggle="collapse" data-parent="#SubMenu3"
+                >Quản lý môn</a
+              >
+              <div class="collapse list-group-submenu" id="SubMenu3">
+                <a
+                  href="../quanly/quanlymon.html"
+                  class="list-group-item"
+                  data-parent="#SubMenu3"
+                  style="margin-top: 15px;"
+                  >Thêm môn học</a
+                >
+                <a
+                  href="#"
+                  class="list-group-item"
+                  data-parent="#SubMenu3"
+                  style="margin-top: 5px;"
+                >
+                  Cập nhật môn học</a
+                >
+              </div>
+            </li>
+            <li class="list-group-item ">
+              <a href="#SubMenu1"  data-toggle="collapse" data-parent="#SubMenu1">Quản lý lớp học </a>
+      <div class="collapse list-group-submenu" id="SubMenu1">
+        
+        <a href="#SubSubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1">Lớp môn học </a>
+        <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
+          <a href="../quanly/quanlylopmon.html" class="list-group-item" data-parent="#SubSubMenu1">* Tạo lớp môn học</a>
+          <a href="#" class="list-group-item" data-parent="#SubSubMenu1">* Cập nhật lớp môn học</a>
+        </div>
+        <a href="#SubSubMenu2" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu2">Lớp học phần </a>
+        <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu2">
+          <a href="../quanly/quanlylophp.html" class="list-group-item" data-parent="#SubSubMenu2">* Tạo lớp học phần</a>
+          <a href="#" class="list-group-item" data-parent="#SubSubMenu2">* Cập nhật lớp học phần</a>
+        </div>
+            </li>
+            <li class="list-group-item ">
+              <a href="#">Sắp xếp lịch trình</a>
+            </li>
+            <li class="list-group-item ">
+              <a href="../quanly/quanlygiangvien.html"
+                >Quản lý giảng viên</a>
+            </li>
+          </ul>
+        </div>
+        <div class="grid-item item2">
+          <div class="grid-container-table">
+            <div class="item item-table1"><h3>QUẢN LÝ GIẢNG VIÊN</h3></div>
+            <div class="item item-table2"><p>Mã giảng viên:</p></div>
+            <div class="item item-table3">
+              <input
+                type="text"
+                name="FirstName"
+                value=""
+                class="textbox"
+                maxlength="10"
+              />
+            </div>
+            <div class="item item-table2"><p>Tên giảng viên:</p></div>
+            <div class="item item-table3">
+              <input
+                type="text"
+                name="FirstName"
+                value=""
+                class="textbox"
+                readonly
+              />
+            </div>
+            <div class="item item-table2"><p>Ngành giảng dạy:</p></div>
+            <div class="item item-table3">
+              <select name="cars" style="width: 300px;">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div>
+
+            <div class="item item-table1" style="text-align: center;">
+              <input type="submit" class="submit" value="Xác nhận" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div><h2>© 2019 - TRƯỜNG ĐẠI HỌC THỦY LỢI</h2></div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/script.js"></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>
