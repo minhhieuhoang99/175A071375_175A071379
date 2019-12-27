@@ -1,9 +1,7 @@
-<?php require ("dautrang.php"); ?>
-<?php require_once("../includes/mysqli_connect.php"); ?>
 <?php
-error_reporting(0);
-//$conn = mysqli_connect("localhost","root","","test");
-
+//error_reporting(0);
+$conn = mysqli_connect("localhost","root","","test");
+//require_once("../includes/mysqli_connect.php");
 require_once("../vendor/php-excel-reader/excel_reader2.php");
 require_once("../vendor/SpreadsheetReader.php");
 
@@ -32,38 +30,38 @@ if (isset($_POST["import"]))
                 //VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6])    
                 $TenTaiKhoan = "";
                 if(isset($Row[0])) {
-                    $TenTaiKhoan = mysqli_real_escape_string($dbcon,$Row[0]);
+                    $TenTaiKhoan = mysqli_real_escape_string($conn,$Row[0]);
                 }
                 
                 $MatKhau = "";
                 if(isset($Row[1])) {
-                    $MatKhau = mysqli_real_escape_string($dbcon,$Row[1]);
+                    $MatKhau = mysqli_real_escape_string($conn,$Row[1]);
                 }
 
                 $email = "";
                 if(isset($Row[2])) {
-                    $email = mysqli_real_escape_string($dbcon,$Row[2]);
+                    $email = mysqli_real_escape_string($conn,$Row[2]);
                 }
                 
                 $CapDo = "";
                 if(isset($Row[3])) {
-                    $CapDo = mysqli_real_escape_string($dbcon,$Row[3]);
+                    $CapDo = mysqli_real_escape_string($conn,$Row[3]);
                 }
 
                 $NgayTao = "";
                 if(isset($Row[4])) {
-                    $NgayTao = mysqli_real_escape_string($dbcon,$Row[4]);
+                    $NgayTao = mysqli_real_escape_string($conn,$Row[4]);
                 }
                 
                 $MaTK = "";
                 if(isset($Row[5])) {
-                    $MaTK = mysqli_real_escape_string($dbcon,$Row[5]);
+                    $MaTK = mysqli_real_escape_string($conn,$Row[5]);
                 }
                 
                 if (!empty($TenTaiKhoan) || !empty($MatKhau) || !empty($email) || !empty($CapDo) || !empty($NgayTao) || !empty($MaTK)) {
                     $query = "INSERT INTO `taikhoan`(`TenTaiKhoan`, `MatKhau`, `email`, `CapDo`, `NgayTao`, `MaTK`)
                     values('".$TenTaiKhoan."','".$MatKhau."','".$email."','".$CapDo."','".$NgayTao."','".$MaTK."')";
-                    $result = mysqli_query($dbcon, $query);
+                    $result = mysqli_query($conn, $query);
                 
                     if (! empty($result)) {
                         $type = "success";
@@ -83,12 +81,82 @@ if (isset($_POST["import"]))
         $message = "Invalid File Type. Upload Excel File.";
   }
 }
-?>    
-<main>
-      <div class="grid-container">
-      <?php require ("navadmin.php"); ?>
-        <div class="grid-item item2">
-        <div class="outer-container">
+?>
+
+<!DOCTYPE html>
+<html>    
+<head>
+<style>    
+body {
+	font-family: Arial;
+	width: 550px;
+}
+
+.outer-container {
+	background: #F0F0F0;
+	border: #e0dfdf 1px solid;
+	padding: 40px 20px;
+	border-radius: 2px;
+}
+
+.btn-submit {
+	background: #333;
+	border: #1d1d1d 1px solid;
+    border-radius: 2px;
+	color: #f0f0f0;
+	cursor: pointer;
+    padding: 5px 20px;
+    font-size:0.9em;
+}
+
+.tutorial-table {
+    margin-top: 40px;
+    font-size: 0.8em;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.tutorial-table th {
+    background: #f0f0f0;
+    border-bottom: 1px solid #dddddd;
+	padding: 8px;
+	text-align: left;
+}
+
+.tutorial-table td {
+    background: #FFF;
+	border-bottom: 1px solid #dddddd;
+	padding: 8px;
+	text-align: left;
+}
+
+#response {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 2px;
+    display:none;
+}
+
+.success {
+    background: #c7efd9;
+    border: #bbe2cd 1px solid;
+}
+
+.error {
+    background: #fbcfcf;
+    border: #f3c6c7 1px solid;
+}
+
+div#response.display-block {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+    <h2>Import Excel File into MySQL Database using PHP</h2>
+    
+    <div class="outer-container">
         <form action="" method="post"
             name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
             <div>
@@ -108,13 +176,13 @@ if (isset($_POST["import"]))
          
 <?php
     $sqlSelect = "SELECT * FROM taikhoan";
-    $result = mysqli_query($dbcon, $sqlSelect);
+    $result = mysqli_query($conn, $sqlSelect);
 
 if (mysqli_num_rows($result) > 0)
 {
 ?>
         
-    <table class='table'>
+    <table class='tutorial-table'>
         <thead>
             <tr>
             
@@ -149,9 +217,6 @@ if (mysqli_num_rows($result) > 0)
 <?php 
 } 
 ?>
-        </div>
-        <div class="grid-item item3"></div>
-      </div>
-      
-    </main>
-    <?php require ("chantrang.php"); ?>
+
+</body>
+</html>
