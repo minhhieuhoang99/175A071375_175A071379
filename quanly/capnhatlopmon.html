@@ -55,6 +55,21 @@
       </div>
     </header>
     <main>
+      <div class="grid-nav">
+        <div class="grid-item item1" style="margin-left: 17px;">
+          <span id="navbar"><a href="/CMCSoft.IU.Web.Info/Home.aspx" >Trang chủ</a> |
+            
+            <a href="./support/default.aspx" target="_blank">Hỏi đáp</a> | 
+        </div>
+        <div class="grid-item item2"></div>
+        <div class="grid-item item3" style="margin-right: 20px;">
+          <a href="/CMCSoft.IU.Web.Info/WebHelp/NewProject1.htm" target="_blank">
+            Trợ giúp</a>
+      <select name="PageHeader1$drpNgonNgu" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;PageHeader1$drpNgonNgu\&#39;,\&#39;\&#39;)&#39;, 0)" id="PageHeader1_drpNgonNgu" style="width:50px;Z-INDEX: 0">
+      <option selected="selected" value="2D8E12D246D64A7BB3B89CC6484D2776">VN</option>
+      </select>
+        </span></div>  
+      </div>
       <div class="grid-container">
         <div class="grid-item item1">
           <ul class="list-group panel">
@@ -149,30 +164,32 @@
         </div>
         <div class="grid-item item2">
           <div class="grid-container-table">
-            <div class="item item-table1"><h3 >TẠO LỚP HỌC PHẦN</h3></div>
-            <div class="item item-table2"><p>Mã lớp học phần:</p></div>
+            <div class="item item-table1"><h3 >CẬP NHẬT LỚP MÔN HỌC</h3></div>
+            <div class="item item-table2"><p>Tên lớp môn:</p></div>
             <div class="item item-table3">
               <input type="text" name="FirstName" value="" class="textbox" />
             </div>
-            <div class="item item-table2"><p>Năm học:</p> </div>
+            <div class="item item-table2"><p>Mã lớp môn:</p> </div>
             <div class="item item-table3">
-              <input type="text" name="LastName" value="" maxlength="4" class="textbox" minlength="4" maxlength="4"/>
+              <input type="text" name="LastName" value="" maxlength="10" class="textbox" />
             </div>
-            <div class="item item-table2"><p>Học kì:</p> </div>
+            <div class="item item-table2"><p>Mã ngành:</p> </div>
             <div class="item item-table3">
-                <select class="select" name="cars" style="width: 300px;">
-                    <option class="select" value="volvo">HK I</option>
-                    <option class="select" value="saab">HK II</option>
-                    <option class="select" value="fiat">HK Bổ sung</option>
-                  
+                <select name="cars" style="width: 300px;">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
                   </select>
             </div>
-            <div class="item item-table2"><p>Giai đoạn:</p> </div>
+            <div class="item item-table2"><p>Tên môn:</p> </div>
             <div class="item item-table3">
-              <select class="select" name="cars" style="width: 300px;">
-                <option class="select" value="volvo">Giai đoạn  I</option>
-                <option class="select" value="saab">Giai đoạn II</option>
-                 </select>
+              <select name="cars" style="width: 300px;">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+              </select>
             </div>
             <div class="item item-table1" style="text-align: center;">
               <input type="submit" class="submit" value="Xác nhận" />

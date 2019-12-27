@@ -38,6 +38,20 @@ footer {
   padding: 10px;
   grid-gap: 20px;
 }
+.grid-nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 10px;
+  grid-gap: 20px;
+  background-color: #1995ad;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: white;
+}
+.grid-nav a {
+  color: white;
+}
 .grid-container-header {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
