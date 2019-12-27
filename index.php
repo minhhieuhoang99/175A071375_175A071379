@@ -1,172 +1,363 @@
-<?php
-require 'header.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>TRƯỜNG ĐẠI HỌC THỦY LỢI</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="css/index.css">
-  <title>Login System</title>
-</head>
-<div class="home-page">
-    	<div class="left-home">
-    		<div class="box-left-1">
-    			<div class="menu1-navbar">
-    				<ul class="sidebar-menu">
-    					<li class="header-home"><a href="">DANH MỤC CHÍNH</a></li>
-    					<li><a href="">Tra cứu lịch giảng dạy</a></li>
-    					<li><a href="">Chương trình đào tạo</a></li>
-    					<li><a href="">Giảng đường trực tuyến</a></li>
-    				</ul>
-    			</div>
-    		</div>
-
-    		<div class="box-left-2">
-    			<div class="box-left-2-top"><span>Liên kết hữu ích</span></div>
-    			<div class="box-left-2-content"><center></center></div>
-    			<div class="box-left-2-bottom"><center></center></div>
-    		</div>
-
-    		<div class="box-left-3">
-    			<div class="box-left-3-top"><span>Thăm dò ý kiến</span></div>
-    			<div class="box-left-3-content">
-    				<p>Chưa có bình luận chọn nào</p>
-    				<input type="submit" name="" value="Đồng ý">
-    				<input type="submit" name="" value="Xem kêt quả">
-    			</div>
-    			<div class="box-left-3-bottom"><center></center></div>
-    		</div>
-
-            <div class="box-left-4">
-    			<div class="box-left-4-top"><span>Hỏi đáp</span></div>
-    			<div class="box-left-4-content">
-    				
-    					<article>
-    						<a href="">Phòng Đào tạo ĐH&SĐH (P3), Phòng Khảo thí và Kiểm định chất lượng (P4), Phòng Tài vụ (P5), Phòng Công tác chính trị và quản lý sinh viên (P7), Trung tâm tin học (TTTH) hỗ trợ, giải đáp những thông tin gì cho sinh viên?</a>
-    					</article>
-
-    					<article>
-    						<a href="">Phòng Đào tạo ĐH&SĐH (P3), Phòng Khảo thí và Kiểm định chất lượng (P4), Phòng Tài vụ (P5), Phòng Công tác chính trị và quản lý sinh viên (P7), Trung tâm tin học (TTTH) hỗ trợ, giải đáp những thông tin gì cho sinh viên?</a>
-    					</article>
-
-    					<article>
-    						<a href="">Phòng Đào tạo ĐH&SĐH (P3), Phòng Khảo thí và Kiểm định chất lượng (P4), Phòng Tài vụ (P5), Phòng Công tác chính trị và quản lý sinh viên (P7), Trung tâm tin học (TTTH) hỗ trợ, giải đáp những thông tin gì cho sinh viên?</a>
-    					</article>
-
-    					<article>
-    						<a href="">Phòng Đào tạo ĐH&SĐH (P3), Phòng Khảo thí và Kiểm định chất lượng (P4), Phòng Tài vụ (P5), Phòng Công tác chính trị và quản lý sinh viên (P7), Trung tâm tin học (TTTH) hỗ trợ, giải đáp những thông tin gì cho sinh viên?</a>
-    					</article>
-    					
-    					<article>
-    						<a href="" class="all">[Xem tất cả]</a>
-    					</article>
-    				</div>
-    			<div class="box-left-4-bottom"><center></center></div>
-    		</div>
-
-            <div class="box-left-5">
-    			<div class="box-left-5-top"><span>Điều tra việc làm</span></div>
-    			<div class="box-left-5-content">
-    				<p>Bạn đã có việc làm chưa</p>
-    				<input type="radio" name="" value=""><label>Đã có</label>
-    				<input type="radio" name="" value=""><label>Chưa có</label>
-
-    				<input type="submit" name="" value="Đồng ý">
-    				<input type="submit" name="" value="Hủy">
-    				<input type="submit" name="" value="Thống kê">
-
-    			</div>
-    			<div class="box-left-5-bottom"><center></center></div>
-    		</div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+   
+  </head>
+  <body>
+    <header>
+      
+      <nav class="navbar navbar-expand-lg navbar-light  " style="background-color: #a1d6e2;" >
+        <a class="navbar-brand" href="#"><img
+          height="58"
+          width="351"
+          src="images/logo.png"
+          alt="logo"
+        /></a>
+        <div class="container">
+        
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="navbar-brand" href="#">
+                  <img src="images/home.png" width="30" height="30" alt="">
+                </a>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  GIỚI THIỆU
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Giới thiệu chung</a>
+                  <a class="dropdown-item" href="#">Toàn cảnh ĐH THủy Lợi</a>
+                  <a class="dropdown-item" href="#">Hệ thống Cơ sở vật chất</a>
+                  <a class="dropdown-item" href="#">Phát triển bền vững</a>
 
 
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  TUYỂN SINH
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Các bậc đào tạo</a>
+                  <a class="dropdown-item" href="#">Thông tin tuyển sinh</a>
+                  <a class="dropdown-item" href="#">Chính sách học bổng</a>
+                  <a class="dropdown-item" href="#">Hướng nghiệp</a>
+                  <a class="dropdown-item" href="#">Xét tuyển trực tuyến</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ĐÀO TẠO
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  NGHIÊN CỨU
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </div>
+              </li>
+			        <li class="nav-item dropdown">
+                <a class="nav-link " href="login.php" id="" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                  ĐĂNG NHẬP
+                </a>                
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input
+                class="form-control mr-sm-2"
+                type="text"
+                placeholder="Tìm kiếm"
+              />
+              <button
+                class="btn btn-outline-primary my-2 my-sm-0"
+                type="button"
+              >
+                Tìm
+              </button>
+            </form>
+          </div>
+          </div>
+      </nav>
+    </header>
+    <main>
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide mt-20"
+          data-ride="carousel"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                class="d-block w-100"
+                src="images/tet2020.png"
+                alt="First slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="images/daihoi.png"
+                alt="Second slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="images/nhanco.png"
+                alt="Second slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="images/dangbo1.png"
+                alt="Third slide"
+              />
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
 
-    	</div>
+        <!-- Main-->
+        <div class="wrapper">
+          <div class="left-sidebar">
+            <h2>Danh Mục Chính</h2>
+            <ul class="list-group">
+              
+              <li class="list-group-item"><a href="#" >Tra Cứu Lịch</a></li>
+              <li class="list-group-item"><a href="#" >Chương Trình Đào Tạo</a></li>
+              <li class="list-group-item"><a href="#" >Giảng Đường Trực Tuyến</a></li>
+            </ul>
+          </div>
+        <div class="center-sidebar"  >
+            
+              <div class="articles">
+                  <article>
+                      <div class="article-left">
+                          <img src="images/xephangthumb.jpg" alt="Article">                            
+                      </div>
+                      <div class="article-right">
+                          <h3>Đại học Thủy lợi là một trong 30 trường đại học Việt Nam có công bố quốc tế nhiều nhất</h3>
+                          <p class="description">Số lượng công bố quốc tế hàng năm của Việt Nam đã cán mốc gần 10.000 bài/năm (năm 2018) trong đó các cơ sở giáo dục đại học đóng góp tới 70%.</p>
+                          <p class="meta">
+                            <span class="date">8 Tháng 6 , 2033</span>
+                            </p>
+                      </div>
+                  </article>
+                  <article>
+                      <div class="article-left">
+                          <img src="images/ta3.jpg" alt="Article">                            
+                      </div>
+                      <div class="article-right">
+                          <h3>Bế giảng khóa học bồi dưỡng tiếng Anh cho công chức thuộc Bộ Nông nghiệp và Phát triển nông thôn năm 2019 </h3>
+                          <p class="description">Vừa qua Trường Đại học Thủy lợi đã tổ chức bế giảng khóa học bồi dưỡng tiếng Anh cho công chức thuộc Bộ Nông nghiệp và Phát triển nông thôn năm 2019.</p>
+                          <p class="meta">
+                            <span class="date">8 Tháng 6 , 2033</span>
+                            </p>
+                      </div>
+                  </article>
+                  <article>
+                      <div class="article-left">
+                          <img src="images/bongda1.jpg" alt="Article">                            
+                      </div>
+                      <div class="article-right">
+                          <h3>Khai mạc giải bóng đá cán bộ, giảng viên thành phố Hà Nội năm 2019 </h3>
+                          <p class="description">Giải năm nay quy tụ 12 đội bóng đá xuất sắc nhất đến từ các trường đại học, học viên Hà Nội tham gia. Hứa hẹn sẽ có một mùa giải hấp dẫn, kịch tính và nhiều bất ngờ.</p>
+                          <p class="meta">
+                            <span class="date">8 Tháng 6 , 2033</span>
+                            </p>
+                      </div>
+                  </article>
+                  <article>
+                      <div class="article-left">
+                          <img src="images/image009.jpg" alt="Article">                            
+                      </div>
+                      <div class="article-right">
+                          <h3>Gặp mặt cán bộ viên chức nghỉ hưu năm 2019 </h3>
+                          <p class="description">(TLU) Nhằm tri ân những cống hiến và đóng góp của các cán bộ viên chức đối với sự nghiệp xây dựng và phát triển của Nhà Trường, sáng 24/12, Trường Đại học Thủy lợi tổ chức buổi Gặp mặt các cán bộ...</p>
+                          <p class="meta">
+                            <span class="date">8 Tháng 6 , 2033</span>
+                            </p>
+                      </div>
+                  </article>
+                  <article>
+                      <div class="article-left">
+                          <img src="images/cnsh3.jpg" alt="Article">                            
+                      </div>
+                      <div class="article-right">
+                          <h3>Seminar giới thiệu: “Quang hợp và các vấn đề liên quan” diễn ra thành công tốt đẹp </h3>
+                          <p class="description"> Ngày 17-12-2019 tại Room5/K1- Trường Đại học Thủy lợi, ngành Công nghệ sinh học (Khoa H&MT- ĐHTL) cùng một số chuyên gia Công nghệ sinh học</p>
+                          <p class="meta">
+                            <span class="date">8 Tháng 6 , 2033</span>
+                            </p>
+                      </div>
+                  </article>
+              </div>
+              <button class="more">Xem tất cả</button>
+        </div>
+        
+        </div>
+        
 
-    	<div class="right-home">
-    		<div class="box-right-1">
-    			<div class="box-right-1-top">
-    				<span>LIÊN THÔNG</span>
-    				<span><a href=""><b>Xem tất cả</b></a></span>
-    			</div>
-    			<div class="box-right-1-content">
-    				<p>[THÔNG TIN ĐÁNG CHÚ Ý]</p>
-    				<span><a href=""><img src="images/viewpost.gif"> Chương trình đào tạo theo học chế tín chỉ trình độ liên thông từ cao đẳng lên đại học hệ chính quy áp dụng từ K55LT trở đi (17/12/2013)</a></span>
-    			</div>
-    			<div class="box-right-1-bottom">
-    				<span><b>Chưa có dữ liệu</b></span>
-    				<span><a href=""><img src="images/news_detail.gif"> Xem chi tiết</a></span>
-    			</div>
-    			
-    		</div>
+    </main>
 
-    		<div class="box-right-1">
-    			<div class="box-right-1-top">
-    				<span>CAO HỌC</span>
-    				<span><a href=""><b>Xem tất cả</b></a></span>
-    			</div>
-    			<div class="box-right-1-content">
-    				<p>[THÔNG TIN ĐÁNG CHÚ Ý]</p>
-    				<span><a href=""><img src="images/viewpost.gif"> Thông báo thi Tiếng Anh B1 đợt 4 năm 2019 (10/10/2019)</a></span>
-    				<span><a href=""><img src="images/viewpost.gif"> QUY ĐỊNH TRÌNH BÀY LUẬN VĂN THẠC SĨ, ĐƠN XIN BẢO VỆ LUẬN VĂN (04/05/2016)</a></span>
-    				<span><a href=""><img src="images/viewpost.gif"> Quy định về đào tạo trình độ thạc sĩ (27/11/2015)</a></span>
-    				<span><a href=""><img src="images/viewpost.gif"> Thông báo về chấn chỉnh học viên thực hiện Nội quy học tập của Nhà trường (19/11/2015)</a></span>
-    				
-
-
-
-    			</div>
-    			<div class="box-right-1-bottom">
-    				<div class="link">
-    					<a href="">Mẫu trình bày đề cương luận văn (07/10/2019)</a>
-    				</div>
-    				<span>Mẫu trình bày đề văn luận cương</span>
-    				<span><a href=""><img src="images/news_detail.gif"> Xem chi tiết</a></span>
-    			</div>
-    			
-    		</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-6 d-flex  align-items-center">
+            <p class="copy">© 2019 - TRƯỜNG ĐẠI HỌC THỦY LỢI</p>
+          </div>
+          <div id="add"></div>
+          <div class="col-6 d-flex justify-content-end align-items-center">
+            <p
+            >
+            TRƯỜNG ĐẠI HỌC THỦY LỢI<br>
+            Địa chỉ : 175 TÂY SƠN, ĐỐNG ĐA, HÀ NỘI.<br>
+            Điện thoại: (024) 3852 2201 - Fax: (024) 3563 3351<br>
+            Email: phonghcth@tlu.edu.vn<br>
+            <p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
 
-    		<div class="box-right-1">
-    			<div class="box-right-1-top">
-    				<span>ĐẠI HỌC CHÍNH QUY</span>
-    				<span><a href=""><b>Xem tất cả</b></a></span>
-    			</div>
-    			<div class="box-right-1-content">
-    				<p>[THÔNG TIN ĐÁNG CHÚ Ý]</p>
-    				<span><a href=""><img src="images/viewpost.gif"> Thông báo thi chuẩn Tiếng Anh đâu ra cho trình độ đại học hệ chính quy đợt 4 năm 2019 (27/11/2019)</a></span>
-    				<span><a href=""><img src="images/viewpost.gif"> Kết quả thi chuẩn Tiếng Anh đầu đợt 3 năm 2019 (11/10/2019)</a></span>
-    				<span><a href=""><img src="images/viewpost.gif"> Thông báo thi chuẩn Tiếng Anh đâu ra cho trình độ đại học hệ chính quy đợt 3 năm 2019 tại Hà Nội (30/08/2019)</a></span>
-    				<span><a href=""><img src="images/viewpost.gif"> Danh sách các môn điều chỉnh lịch thi GD2, HK2, 2018_2019 (13/06/2019)</a></span>
-    				<span><a href=""><img src="images/viewpost.gif"> Triển khai kế hoạch học kỳ hè năm học 2018-2019 (12/06/2019)</a></span>
-    				<span><a href=""><img src="images/viewpost.gif"> Thông báo thi chuẩn Tiếng Anh đâu ra cho trình độ đại học hệ chính quy đợt 2 năm 2019 tại Hà Nội (02/04/2019)</a></span>
-    				<span><a href=""><img src="images/viewpost.gif"> Thông báo kết quả thi chuẩn Tiếng Anh đầu ra đợt 1 năm 2019 (22/02/2019)</a></span>
-    				<span><a href=""><img src="images/viewpost.gif"> Thông báo kết quả thi chuẩn Tiếng Anh đầu ra đợt 1 năm 2019 (22/02/2019)</a></span>
-    			</div>
-    			<div class="box-right-1-bottom">
-    				<div class="link">
-    					<a href="">Thông báo kết quả thi chuẩn Tiếng Anh đầu ra đợt 2 năm 2019 tại Hà Nội (10/06/2019)</a>
-    				</div>
-    				<span>Thông báo kết quả thi chuẩn Tiếng Anh đầu ra đợt 2 năm 2019 tại Hà Nội</span>
-    				<span><a href=""><img src="images/news_detail.gif"> Xem chi tiết</a></span>
-    				<p class="link1"><a href=""><img src="images/viewpost.gif"> Kết quả thi chuẩn Tiếng Anh đầu ra cho hệ ĐHCQ đợt 3 năm 2018 (30/11/2018)</a></p>
-    			</div>
-    			
-    		</div>
-
-
-    	</div>
-
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Contacts Us</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="./index.html" method="GET">
+              <div class="form-group">
+                  <label for="exampleFormControlInput1">Your Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Name"
+                  />
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Phone Number</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Phone"
+                      placeholder="Phone"
+                    />
+                  </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <button type="summits" class="btn btn-primary">Summits</button>
+            </form>
+        </div>
+      </div>
     </div>
-</main>
 
 
-<?php
-require 'footer.php';
-?>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
