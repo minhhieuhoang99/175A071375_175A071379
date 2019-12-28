@@ -16,7 +16,7 @@
                   >Tạo ngành học</a
                 >
                 <a
-                  href="#"
+                  href="../QuanLy/quanly_CNnganh.php"
                   class="list-group-item"
                   data-parent="#SubMenu2"
                   style="margin-top: 5px;"
