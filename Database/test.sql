@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 27, 2019 lúc 09:31 AM
+-- Thời gian đã tạo: Th12 28, 2019 lúc 10:48 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.3.11
 
@@ -94,8 +94,7 @@ CREATE TABLE `lichtrinhthucte` (
 
 CREATE TABLE `lophocphan` (
   `MaLHP` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `TenLopHP` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `MaTGH` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL
+  `MaTGH` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -106,7 +105,6 @@ CREATE TABLE `lophocphan` (
 
 CREATE TABLE `lopmonhoc` (
   `MaLTM` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `TenLopMon` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `MaMon` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -122,13 +120,6 @@ CREATE TABLE `mon` (
   `MaNganh` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `mon`
---
-
-INSERT INTO `mon` (`TenMon`, `MaMon`, `MaNganh`) VALUES
-('Công Nghệ Web', 'CNW', 'CNTT');
-
 -- --------------------------------------------------------
 
 --
@@ -139,13 +130,6 @@ CREATE TABLE `nganh` (
   `MaNganh` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `TenNganh` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `nganh`
---
-
-INSERT INTO `nganh` (`MaNganh`, `TenNganh`) VALUES
-('CNTT', 'Công Nghệ Thông Tin');
 
 -- --------------------------------------------------------
 
@@ -270,9 +254,7 @@ INSERT INTO `taikhoan` (`TenTaiKhoan`, `MatKhau`, `email`, `CapDo`, `NgayTao`, `
 ('giangvien27', '$2y$10$rCpnHGtra.axVLHRJS1fMOdyofMUPeIamkwIHR10H7u1tVB1CptkW', 'giangvien27@mail.com', 3, '0000-00-00 00:00:00', 87),
 ('giangvien28', '$2y$10$rCpnHGtra.axVLHRJS1fMOdyofMUPeIamkwIHR10H7u1tVB1CptkW', 'giangvien28@mail.com', 3, '0000-00-00 00:00:00', 88),
 ('giangvien29', '$2y$10$rCpnHGtra.axVLHRJS1fMOdyofMUPeIamkwIHR10H7u1tVB1CptkW', 'giangvien29@mail.com', 3, '0000-00-00 00:00:00', 89),
-('giangvien30', '$2y$10$rCpnHGtra.axVLHRJS1fMOdyofMUPeIamkwIHR10H7u1tVB1CptkW', 'giangvien30@mail.com', 3, '0000-00-00 00:00:00', 90),
-('quanly', '$2y$10$rCpnHGtra.axVLHRJS1fMOdyofMUPeIamkwIHR10H7u1tVB1CptkW', 'quanly@mail.com', 2, '2019-12-26 19:46:56', 99),
-('admin', '$2y$10$rCpnHGtra.axVLHRJS1fMOdyofMUPeIamkwIHR10H7u1tVB1CptkW', 'admin@mail.com', 1, '0000-00-00 00:00:00', 100);
+('giangvien30', '$2y$10$rCpnHGtra.axVLHRJS1fMOdyofMUPeIamkwIHR10H7u1tVB1CptkW', 'giangvien30@mail.com', 3, '0000-00-00 00:00:00', 90);
 
 -- --------------------------------------------------------
 
@@ -284,15 +266,8 @@ CREATE TABLE `thoigianhoc` (
   `NamHoc` date DEFAULT NULL,
   `HocKy` tinyint(4) DEFAULT NULL,
   `GiaiDoan` tinyint(4) DEFAULT NULL,
-  `MaTGH` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `MaTGH` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `thoigianhoc`
---
-
-INSERT INTO `thoigianhoc` (`NamHoc`, `HocKy`, `GiaiDoan`, `MaTGH`) VALUES
-('0000-00-00', 1, 1, '1');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -310,8 +285,7 @@ ALTER TABLE `ctlophp`
 --
 ALTER TABLE `giangvien`
   ADD PRIMARY KEY (`MaGV`),
-  ADD KEY `MaTK` (`MaTK`),
-  
+  ADD KEY `MaTK` (`MaTK`);
 
 --
 -- Chỉ mục cho bảng `gv_mon`
@@ -388,7 +362,7 @@ ALTER TABLE `thoigianhoc`
 -- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `MaTK` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `MaTK` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -405,8 +379,7 @@ ALTER TABLE `ctlophp`
 -- Các ràng buộc cho bảng `giangvien`
 --
 ALTER TABLE `giangvien`
-  ADD CONSTRAINT `giangvien_ibfk_1` FOREIGN KEY (`MaTK`) REFERENCES `taikhoan` (`MaTK`),
-
+  ADD CONSTRAINT `giangvien_ibfk_1` FOREIGN KEY (`MaTK`) REFERENCES `taikhoan` (`MaTK`);
 
 --
 -- Các ràng buộc cho bảng `gv_mon`

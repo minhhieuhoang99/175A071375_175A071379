@@ -2,6 +2,7 @@
 <?php require ('tao_lophp.php');?>  
 <?php require ("dautrang.php"); ?>
     <main>
+    <?php require ("nav.php"); ?>
       <div class="grid-container">
         <?php require ('navquanly.php');?>
         <form action="quanlymon.php" method="POST">

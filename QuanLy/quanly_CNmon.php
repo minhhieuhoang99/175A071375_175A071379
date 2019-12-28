@@ -6,6 +6,7 @@
     $query = mysqli_query($dbcon,$sql);
 ?>
 <main>
+<?php require ("nav.php"); ?>
       <div class="grid-container">
       <?php require ("navquanly.php"); ?>
         <div class="grid-item item2">

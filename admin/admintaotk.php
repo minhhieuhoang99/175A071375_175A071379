@@ -17,6 +17,14 @@
                           <h2 class="h2 text-center">Tạo Tài Khoản</h2>
                           <form action="admintaotk.php" method="post" onsubmit="return checked();" name="regform" id="regform">
                               <div class="form-group row">
+                                  <label for="tentaikhoan" class="col-sm-4 col-form-label">Tên Tài Khoản:</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control" id="tentaikhoan" name="tentaikhoan"
+                                          placeholder="Tên Tài Khoản" maxlength="30" required
+                                          value="<?php if (isset($_POST['tentaikhoan'])) echo $_POST['tentaikhoan']; ?>">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
                                   <label for="ten" class="col-sm-4 col-form-label">Tên:</label>
                                   <div class="col-sm-8">
                                       <input type="text" class="form-control" id="ten" name="ten"
@@ -45,7 +53,7 @@
                                   <div class="col-sm-8">
                                       <input type="date" class="form-control" id="ngaysinh" name="ngaysinh" placeholder="Ngày Sinh"
                                           maxlength="60" required
-                                          value="<?php if (isset($_POST['ngaysinh'])) echo $_POST['ngaysinh']; ?>">
+                                          value="<?php  echo date('Y-m-d') ; ?>">
                                   </div>
                               </div>
                               <div class="form-group row">
@@ -53,10 +61,10 @@
                                   <div class="col-sm-8">
                                        <select class="form-control" id="capdo" name="capdo" placeholder=""
                                             maxlength="60" required
-                                            value="<?php if (isset($_POST['capdo'])) echo $_POST['capdo']; ?>">>
-                                            <option value="giangvien">Giảng Viên</option>
-                                            <option value="quanly">Quản Lý</option>
-                                            <option value="admin">Quản Trị</option>
+                                            value="">
+                                            <option  value="3">Giảng Viên</option>
+                                            <option  value="2">Quản Lý</option>
+                                            
                                         </select>
                                     </div>
                                   </div>

@@ -119,7 +119,7 @@ if (mysqli_num_rows($result) > 0)
             <tr>
             
                 <th>TenTaiKhoan</th>
-                <th>MatKhau</th>
+                
                 <th>email</th>
                 <th>CapDo</th>
                 <th>NgayTao</th>
@@ -134,7 +134,7 @@ if (mysqli_num_rows($result) > 0)
         <tr>
         
             <td><?php  echo $row['TenTaiKhoan']; ?></td>
-            <td><?php  echo $row['MatKhau']; ?></td>
+           
             <td><?php  echo $row['email']; ?></td>
             <td><?php  echo $row['CapDo']; ?></td>
             <td><?php  echo $row['NgayTao']; ?></td>

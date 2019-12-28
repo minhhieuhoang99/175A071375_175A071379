@@ -2,6 +2,7 @@
 <?php require ('tao_mon.php');?>
   <?php require ("dautrang.php"); ?>
     <main>
+    <?php require ("nav.php"); ?>
       <div class="grid-container">
       <?php require ('navquanly.php');?>
         <div class="grid-item item2">
