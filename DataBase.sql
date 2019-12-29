@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 26, 2019 lúc 08:46 AM
+-- Thời gian đã tạo: Th12 29, 2019 lúc 12:25 PM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.3.11
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `test`
+-- Cơ sở dữ liệu: `btlweb`
 --
 
 -- --------------------------------------------------------
@@ -44,8 +44,7 @@ CREATE TABLE `giangvien` (
   `HoTenGV` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `NgaySinh` date DEFAULT NULL,
   `DiaChi` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `MaTK` int(10) DEFAULT NULL,
-  `MaNganh` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
+  `MaTK` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -70,7 +69,18 @@ CREATE TABLE `kehoachgiangday` (
   `BaiHocDK` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `DiaDiemDK` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ThoiGianDK` datetime DEFAULT NULL,
-  `MaGV` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
+  `MaLHP` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `khoa`
+--
+
+CREATE TABLE `khoa` (
+  `MaKhoa` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `TenKhoa` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -84,7 +94,7 @@ CREATE TABLE `lichtrinhthucte` (
   `BaiHocTT` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `DiaDiemTT` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ThoiGianTT` datetime DEFAULT NULL,
-  `MaGV` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
+  `MaLHP` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -95,7 +105,6 @@ CREATE TABLE `lichtrinhthucte` (
 
 CREATE TABLE `lophocphan` (
   `MaLHP` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `TenLopHP` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `MaTGH` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -107,8 +116,8 @@ CREATE TABLE `lophocphan` (
 
 CREATE TABLE `lopmonhoc` (
   `MaLTM` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `TenLopMon` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `MaMon` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
+  `MaMon` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `MaGV` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -131,7 +140,8 @@ CREATE TABLE `mon` (
 
 CREATE TABLE `nganh` (
   `MaNganh` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `TenNganh` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
+  `TenNganh` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `MaKhoa` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -145,7 +155,7 @@ CREATE TABLE `quanly` (
   `HoTenQL` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `NgaySinh` date DEFAULT NULL,
   `DiaChi` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `MaTK` int(10) DEFAULT NULL
+  `MaTK` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -157,18 +167,11 @@ CREATE TABLE `quanly` (
 CREATE TABLE `taikhoan` (
   `TenTaiKhoan` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `MatKhau` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Email` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `CapDo` tinyint(4) DEFAULT NULL,
-  `NgayTao` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `MaTK` int(10) NOT NULL
+  `NgayTao` datetime DEFAULT NULL,
+  `MaTK` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `taikhoan`
---
-
-INSERT INTO `taikhoan` (`TenTaiKhoan`, `MatKhau`, `email`, `CapDo`, `NgayTao`, `MaTK`) VALUES
-('quanly', '$2y$10$rCpnHGtra.axVLHRJS1fMOdyofMUPeIamkwIHR10H7u1tVB1CptkW', 'quanly@mail.com', 2, '2019-12-26 14:37:38', 2);
 
 -- --------------------------------------------------------
 
@@ -179,7 +182,8 @@ INSERT INTO `taikhoan` (`TenTaiKhoan`, `MatKhau`, `email`, `CapDo`, `NgayTao`, `
 CREATE TABLE `thoigianhoc` (
   `NamHoc` date DEFAULT NULL,
   `HocKy` tinyint(4) DEFAULT NULL,
-  `GiaiDoan` tinyint(4) DEFAULT NULL,
+  `NgayBatDau` date DEFAULT NULL,
+  `NgayKetThuc` date DEFAULT NULL,
   `MaTGH` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -199,8 +203,7 @@ ALTER TABLE `ctlophp`
 --
 ALTER TABLE `giangvien`
   ADD PRIMARY KEY (`MaGV`),
-  ADD KEY `MaTK` (`MaTK`),
-  ADD KEY `MaNganh` (`MaNganh`);
+  ADD KEY `MaTK` (`MaTK`);
 
 --
 -- Chỉ mục cho bảng `gv_mon`
@@ -214,14 +217,20 @@ ALTER TABLE `gv_mon`
 --
 ALTER TABLE `kehoachgiangday`
   ADD PRIMARY KEY (`MaKHGD`),
-  ADD KEY `MaGV` (`MaGV`);
+  ADD KEY `MaLHP` (`MaLHP`);
+
+--
+-- Chỉ mục cho bảng `khoa`
+--
+ALTER TABLE `khoa`
+  ADD PRIMARY KEY (`MaKhoa`);
 
 --
 -- Chỉ mục cho bảng `lichtrinhthucte`
 --
 ALTER TABLE `lichtrinhthucte`
   ADD PRIMARY KEY (`MaLTTT`),
-  ADD KEY `MaGV` (`MaGV`);
+  ADD KEY `MaLHP` (`MaLHP`);
 
 --
 -- Chỉ mục cho bảng `lophocphan`
@@ -235,7 +244,8 @@ ALTER TABLE `lophocphan`
 --
 ALTER TABLE `lopmonhoc`
   ADD PRIMARY KEY (`MaLTM`),
-  ADD KEY `MaMon` (`MaMon`);
+  ADD KEY `MaMon` (`MaMon`),
+  ADD KEY `MaGV` (`MaGV`);
 
 --
 -- Chỉ mục cho bảng `mon`
@@ -248,7 +258,8 @@ ALTER TABLE `mon`
 -- Chỉ mục cho bảng `nganh`
 --
 ALTER TABLE `nganh`
-  ADD PRIMARY KEY (`MaNganh`);
+  ADD PRIMARY KEY (`MaNganh`),
+  ADD KEY `MaKhoa` (`MaKhoa`);
 
 --
 -- Chỉ mục cho bảng `quanly`
@@ -270,16 +281,6 @@ ALTER TABLE `thoigianhoc`
   ADD PRIMARY KEY (`MaTGH`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
---
-
---
--- AUTO_INCREMENT cho bảng `taikhoan`
---
-ALTER TABLE `taikhoan`
-  MODIFY `MaTK` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- Các ràng buộc cho các bảng đã đổ
 --
 
@@ -294,8 +295,7 @@ ALTER TABLE `ctlophp`
 -- Các ràng buộc cho bảng `giangvien`
 --
 ALTER TABLE `giangvien`
-  ADD CONSTRAINT `giangvien_ibfk_1` FOREIGN KEY (`MaTK`) REFERENCES `taikhoan` (`MaTK`),
-  ADD CONSTRAINT `giangvien_ibfk_2` FOREIGN KEY (`MaNganh`) REFERENCES `nganh` (`MaNganh`);
+  ADD CONSTRAINT `giangvien_ibfk_1` FOREIGN KEY (`MaTK`) REFERENCES `taikhoan` (`MaTK`);
 
 --
 -- Các ràng buộc cho bảng `gv_mon`
@@ -308,13 +308,13 @@ ALTER TABLE `gv_mon`
 -- Các ràng buộc cho bảng `kehoachgiangday`
 --
 ALTER TABLE `kehoachgiangday`
-  ADD CONSTRAINT `kehoachgiangday_ibfk_1` FOREIGN KEY (`MaGV`) REFERENCES `giangvien` (`MaGV`);
+  ADD CONSTRAINT `kehoachgiangday_ibfk_1` FOREIGN KEY (`MaLHP`) REFERENCES `lophocphan` (`MaLHP`);
 
 --
 -- Các ràng buộc cho bảng `lichtrinhthucte`
 --
 ALTER TABLE `lichtrinhthucte`
-  ADD CONSTRAINT `lichtrinhthucte_ibfk_1` FOREIGN KEY (`MaGV`) REFERENCES `giangvien` (`MaGV`);
+  ADD CONSTRAINT `lichtrinhthucte_ibfk_1` FOREIGN KEY (`MaLHP`) REFERENCES `lophocphan` (`MaLHP`);
 
 --
 -- Các ràng buộc cho bảng `lophocphan`
@@ -326,13 +326,20 @@ ALTER TABLE `lophocphan`
 -- Các ràng buộc cho bảng `lopmonhoc`
 --
 ALTER TABLE `lopmonhoc`
-  ADD CONSTRAINT `lopmonhoc_ibfk_1` FOREIGN KEY (`MaMon`) REFERENCES `mon` (`MaMon`);
+  ADD CONSTRAINT `lopmonhoc_ibfk_1` FOREIGN KEY (`MaMon`) REFERENCES `mon` (`MaMon`),
+  ADD CONSTRAINT `lopmonhoc_ibfk_2` FOREIGN KEY (`MaGV`) REFERENCES `giangvien` (`MaGV`);
 
 --
 -- Các ràng buộc cho bảng `mon`
 --
 ALTER TABLE `mon`
   ADD CONSTRAINT `mon_ibfk_1` FOREIGN KEY (`MaNganh`) REFERENCES `nganh` (`MaNganh`);
+
+--
+-- Các ràng buộc cho bảng `nganh`
+--
+ALTER TABLE `nganh`
+  ADD CONSTRAINT `nganh_ibfk_1` FOREIGN KEY (`MaKhoa`) REFERENCES `khoa` (`MaKhoa`);
 
 --
 -- Các ràng buộc cho bảng `quanly`
