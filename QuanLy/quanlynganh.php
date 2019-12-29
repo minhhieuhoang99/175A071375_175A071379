@@ -8,7 +8,7 @@
       <div class="grid-container">
       <?php require ('navquanly.php');?>
         <div class="grid-item item2">
-          <div class="grid-container-table"  >
+          <div class="grid-table"  >
               <form action="quanlynganh.php" method="POST">
                   <div class="item item-table1"><h3 >TẠO NGÀNH HỌC</h3></div>
                   <div class="form-group">

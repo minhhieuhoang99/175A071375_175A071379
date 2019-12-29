@@ -1,0 +1,74 @@
+
+Create Table TaiKhoan(
+TenTaiKhoan varchar(30) ,
+ MatKhau varchar(60),
+ email varchar(30),
+ CapDo tinyint,
+ NgayTao datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() ,
+ MaTK int(10) NOT NULL AUTO_INCREMENT Primary Key
+);
+
+Create Table Nganh(
+ MaNganh varchar(10) Primary Key,
+ TenNganh varchar(30)
+ );
+ Create Table GiangVien(
+ MaGV varchar(10) Primary Key,
+ HoTenGV varchar(30),
+ NgaySinh date,
+ DiaChi varchar(30),
+ MaTK int (10) ,foreign key (MaTK) references TaiKhoan(MaTK) 
+ );
+Create Table Mon(
+TenMon varchar(30) ,
+MaMon varchar(10) Primary Key,
+MaNganh varchar(10) ,foreign key (MaNganh) references Nganh(MaNganh)
+);
+Create Table GV_Mon(
+MaGV varchar(10) ,foreign key (MaGV) references GiangVien(MaGV),
+MaMon varchar(10),foreign key (MaMon) references Mon(MaMon) ,
+Primary Key(MaGV,MaMon)
+);
+Create Table QuanLy(
+ MaQL varchar(10) Primary Key,
+ HoTenQL varchar(30),
+ NgaySinh date,
+ DiaChi varchar(30),
+ MaTK int(10) ,foreign key (MaTK) references TaiKhoan(MaTK)
+);
+Create Table ThoiGianHoc(
+NamHoc date,
+HocKy tinyint,
+NgayBatDau date,
+NgayKetThuc date,
+MaTGH varchar(10) Primary Key
+);
+Create Table LopMonHoc(
+TenLopMon varchar(30) ,  
+MaLTM varchar(10) Primary Key,
+MaMon varchar(10) ,foreign key (MaMon) references Mon(MaMon),
+MaGV varchar(10) , foreign key (MaGV) references GiangVien(MaGV)
+); 
+Create Table LopHocPhan(
+TenLopHP varchar(30) , 
+MaLHP varchar(10) Primary Key,
+MaTGH varchar(10) ,foreign key (MaTGH) references ThoiGianHoc(MaTGH)
+);
+Create Table CTLopHP(
+MaLTM varchar(10) ,foreign key (MaLTM) references LopMonHoc(MaLTM),
+MaLHP varchar(10) ,foreign key (MaLHP) references LopHocPhan(MaLHP)
+);
+Create Table KeHoachGiangDay (
+MaKHGD varchar(10) Primary Key,
+BaiHocDK varchar(50),
+DiaDiemDK varchar(30),
+ThoiGianDK Datetime,
+MaLHP varchar(10) , foreign key (MaLHP) references LopHocPhan(MaLHP)
+);
+Create Table LichTrinhThucTe (
+MaLTTT varchar(10) Primary Key,
+BaiHocTT varchar(50),
+DiaDiemTT varchar(30),
+ThoiGianTT Datetime,
+MaLHP varchar(10) , foreign key (MaLHP) references LopHocPhan(MaLHP)
+);

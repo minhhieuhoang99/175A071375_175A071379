@@ -38,7 +38,7 @@
                   >Thêm môn học</a
                 >
                 <a
-                  href="#"
+                  href="../QuanLy/quanly_CNmon.php"
                   class="list-group-item"
                   data-parent="#SubMenu3"
                   style="margin-top: 5px;"
@@ -54,16 +54,16 @@
         <a href="#SubSubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1" style="margin-top: 15px;">Lớp môn học </a>
         <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
           <a href="../QuanLy/quanlylopmon.php" class="list-group-item" data-parent="#SubSubMenu1" style="margin-top: 15px;">* Tạo lớp môn học</a>
-          <a href="#" class="list-group-item" data-parent="#SubSubMenu1" style="margin-top: 5px;">* Cập nhật lớp môn học</a>
+          <a href="../QuanLy/quanly_CNLmon.php" class="list-group-item" data-parent="#SubSubMenu1" style="margin-top: 5px;">* Cập nhật lớp môn học</a>
         </div>
         <a href="#SubSubMenu2" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu2" style="margin-top: 5px;">Lớp học phần </a>
         <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu2">
           <a href="../QuanLy/quanlylophp.php" class="list-group-item" data-parent="#SubSubMenu2" style="margin-top: 15px;">* Tạo lớp học phần</a>
-          <a href="#" class="list-group-item" data-parent="#SubSubMenu2" style="margin-top: 5px;">* Cập nhật lớp học phần</a>
+          <a href="../QuanLy/quanly_CNLhp.php" class="list-group-item" data-parent="#SubSubMenu2" style="margin-top: 5px;">* Cập nhật lớp học phần</a>
         </div>
             </li>
             <li class="list-group-item ">
-              <a href="#">Sắp xếp lịch trình</a>
+              <a href="../QuanLy/sapxeplichtrinh.php">Sắp xếp lịch trình</a>
             </li>
             <li class="list-group-item ">
               <a href="#SubMenu4" data-toggle="collapse" data-parent="#SubMenu4"

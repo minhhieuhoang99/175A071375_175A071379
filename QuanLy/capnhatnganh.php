@@ -1,31 +1,16 @@
 <?php require_once("../includes/mysqli_connect.php"); ?>
 <?php require ("dautrang.php"); ?>
 <?php
-	if (isset($_POST["edit_majors"])) {//name chỗ nút cập nhâtj
-		//lấy thông tin từ các form bằng phương thức POST
+	if (isset($_POST["capnhatnganh"])) {
 		$MaNganh = $_POST["MaNganh"];
 		$TenNganh = $_POST["TenNganh"];
-		
-	
-		// Viết câu lệnh cập nhật thông tin người dùng
 		$sql = "UPDATE nganh SET TenNganh = '$TenNganh' WHERE MaNganh = '$MaNganh'";
-		// thực thi câu $sql với biến conn lấy từ file connection.php
 		mysqli_query($dbcon,$sql);
-
-		header('Location: manager.php');
-       
+		header('Location: quanly_CNnganh.php');
 	}
- 
-    $id = -1;
-	if (isset($_GET['id'])) {
-		$id = $_GET['id'];
-	}
-
-
+    $id = -1;	if (isset($_GET['id'])) {	$id = $_GET['id'];	}
 	$sql = "SELECT * FROM nganh WHERE MaNganh = '$id'";
 	$query = mysqli_query($dbcon,$sql);
-      
- 
 ?>    
     <main>
     <?php require ("nav.php"); ?>

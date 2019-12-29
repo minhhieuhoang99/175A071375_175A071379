@@ -5,6 +5,12 @@
     $sql = "SELECT TenMon , MaMon , MaNganh FROM mon";
     $query = mysqli_query($dbcon,$sql);
 ?>
+<?php
+	if (isset($_GET["id_delete"])) {		
+		$sql = 'DELETE FROM mon WHERE MaMon LIKE "' . $_GET["id_delete"] . '"';
+		mysqli_query($dbcon,$sql);	
+	}	
+?>
 <main>
 <?php require ("nav.php"); ?>
       <div class="grid-container">
@@ -32,8 +38,8 @@
           <th scope="row"><?php echo $row['MaNganh']; ?></th>
           <td><?php echo $row['MaMon']; ?></td>
           <td><?php echo $row['TenMon']; ?></td>
-          <td><a href="">Sửa</a></td>
-          <td><a href="">Xóa</a></td>
+          <td><a href="capnhatmon.php?id=<?php echo $MaMon;?>">Sửa</a></td>
+          <td><a href="quanly_CNmon.php?id_delete=<?php echo $MaMon;?>">Xóa</a></td>
 
         </tr>
         <?php } ?>

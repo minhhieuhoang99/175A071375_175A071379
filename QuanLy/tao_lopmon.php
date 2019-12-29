@@ -7,7 +7,7 @@ if (isset($_POST["tao_lopmon"])) {
   $MaLopMon = $_POST["MaLTM"];
   $MaMon = $_POST["MaMon"];  
 
-  $sql = "INSERT INTO lopmonhoc VALUES ('$MaLopMon', '$TenLopMon','$MaMon')";
+  $sql = "INSERT INTO lopmonhoc VALUES ('$TenLopMon','$MaLopMon', '$MaMon')";
   
       mysqli_set_charset($dbcon,$sql);
       mysqli_query($dbcon,$sql);
