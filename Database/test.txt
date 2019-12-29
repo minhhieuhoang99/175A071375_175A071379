@@ -72,3 +72,4 @@ DiaDiemTT varchar(30),
 ThoiGianTT Datetime,
 MaLHP varchar(10) , foreign key (MaLHP) references LopHocPhan(MaLHP)
 );
+

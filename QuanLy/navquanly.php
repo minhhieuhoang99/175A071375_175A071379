@@ -70,15 +70,15 @@
                 >Quản lý giảng viên</a
               >
               <div class="collapse list-group-submenu" id="SubMenu4">
-                <a
+                <!-- <a
                   href="../QuanLy/quanlygiangvien.php"
                   class="list-group-item"
                   data-parent="#SubMenu4"
                   style="margin-top: 15px;"
                   >Thêm giảng viên</a
-                >
+                > -->
                 <a
-                  href="#"
+                  href="../QuanLy/quanly_CNgiangvien.php"
                   class="list-group-item"
                   data-parent="#SubMenu4"
                   style="margin-top: 5px;"

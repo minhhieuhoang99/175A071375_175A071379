@@ -27,15 +27,26 @@
                 readonly
               />
             </div>
-            <div class="item item-table2"><p>Ngành giảng dạy:</p></div>
+            <div class="item item-table2"><p>Ngày sinh:</p></div>
             <div class="item item-table3">
-              <select name="cars" style="width: 300px;">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="fiat">Fiat</option>
-                <option value="audi">Audi</option>
-              </select>
+              <input
+                type="date"
+                name="FirstName"
+                value=""
+                class=""               
+              />
             </div>
+            <div class="item item-table2"><p>Địa chỉ:</p></div>
+            <div class="item item-table3">
+              <input
+                type="text"
+                name="FirstName"
+                value=""
+                class="textbox"
+                readonly
+              />
+            </div>
+            
 
             <div class="item item-table1" style="text-align: center;">
               <input type="submit" class="submit" value="Xác nhận" />

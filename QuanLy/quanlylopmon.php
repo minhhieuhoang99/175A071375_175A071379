@@ -16,24 +16,41 @@
             </div>
             <div class="item item-table4"><p>Mã lớp môn:</p> </div>
             <div class="item item-table5">
-              <input type="text" value="" maxlength="10" name="MaLTM" class="form-control" required  />
+              <input type="text" value=""  name="MaLTM" class="form-control" required  />
             </div>
             <div class="item item-table6"><p>Mã Môn:</p> </div>
             <div class="item item-table7">
-                            <?php
-                            $sql = mysqli_query($dbcon,"select MaMon from mon") or die(myqli_error($dbcon));
-                            if (mysqli_num_rows($sql) > 0) {
-                            $i=0;
-                            ?>
-                            <select style="width: 300px; class="form-control" name = "MaMon">
-                              <option></option>
-                              <?php while($row=mysqli_fetch_assoc($sql)) {
-                              $i++; ?>
+                <?php
+                $sql = mysqli_query($dbcon,"select MaMon from mon") or die(myqli_error($dbcon));
+                if (mysqli_num_rows($sql) > 0) {
+                $i=0;
+                ?>
+                <select  class=" form-control" name="MaMon">
+                <option></option>
+                <?php while($row=mysqli_fetch_assoc($sql)) {
+                $i++; ?>
 
-                              <option><?php echo $row['MaMon']; ?></option>
-                              <?php }
-                            }  ?>
-                            </select>
+                <option><?php echo $row['MaMon']; ?></option>
+                <?php }
+                }  ?>
+                </select>            
+            </div>
+            <div class="item item-table6"><p>Mã Giảng Viên:</p> </div>
+            <div class="item item-table7">
+                <?php
+                $sql = mysqli_query($dbcon,"select MaGV from GiangVien") or die(myqli_error($dbcon));
+                if (mysqli_num_rows($sql) > 0) {
+                $i=0;
+                ?>
+                <select  class=" form-control" name="MaGV">
+                <option></option>
+                <?php while($row=mysqli_fetch_assoc($sql)) {
+                $i++; ?>
+
+                <option><?php echo $row['MaGV']; ?></option>
+                <?php }
+                }  ?>
+                </select>
             </div>
           
             <div class="item item-table8" style="text-align: center;">
