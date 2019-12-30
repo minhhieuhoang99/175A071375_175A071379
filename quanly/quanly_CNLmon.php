@@ -2,10 +2,17 @@
 <?php require ("dautrang.php"); ?>
 
 <?php
-    $sql = "SELECT MaLTM , TenLopMon , MaMon FROM lopmonhoc";
+    $sql = "SELECT MaLTM , TenLopMon , MaMon, MaGV FROM lopmonhoc";
     $query = mysqli_query($dbcon,$sql);
 ?>
+<?php
+	if (isset($_GET["id_delete"])) {	
+		$sql = 'DELETE FROM lopmonhoc WHERE MaLTM LIKE "' . $_GET["id_delete"] . '"';
+		mysqli_query($dbcon,$sql);
+	}
+?>
 <main>
+<?php require ("nav.php"); ?>
       <div class="grid-container">
       <?php require ("navquanly.php"); ?>
         <div class="grid-item item2">
@@ -16,6 +23,7 @@
           <th scope="col">Mã lớp môn học</th>  
           <th scope="col">Tên lớp môn học</th>
           <th scope="col">Mã môn</th>
+          <th scope="col">Mã Giảng Viên</th>
           <th scope="col">Sửa</th>
           <th scope="col">Xóa</th>
 
@@ -31,8 +39,9 @@
           <th scope="row"><?php echo $row['MaLTM']; ?></th>
           <td><?php echo $row['TenLopMon']; ?></td>
           <td><?php echo $row['MaMon']; ?></td>
-          <td><a href="">Sửa</a></td>
-          <td><a href="">Xóa</a></td>
+          <td><?php echo $row['MaGV']; ?></td>
+          <td><a href="capnhatlopmon.php?id=<?php echo $MaLTM;?>">Sửa</a></td>
+          <td><a href="quanly_CNLmon.php?id_delete=<?php echo $MaLTM;?>">Xóa</a></td>
 
         </tr>
         <?php } ?>

@@ -2,9 +2,10 @@
 <?php require ('tao_lophp.php');?>  
 <?php require ("dautrang.php"); ?>
     <main>
+    <?php require ("nav.php"); ?>
       <div class="grid-container">
         <?php require ('navquanly.php');?>
-        <form action="quanlymon.php" method="POST">
+        <form action="quanlylophp.php" method="POST">
             <div class="grid-item item2">
               <div class="grid-container-table">
                 <div class="item item-table1"><h3 >TẠO LỚP HỌC PHẦN</h3></div>
@@ -19,23 +20,22 @@
                 <div class="item item-table2"><p>Mã Thời Gian Học:</p> </div>
                 <div class="item item-table3">
                 <?php
-                            $sql = mysqli_query($dbcon,"select MaTGH from thoigianhoc") or die(myqli_error($dbcon));
-                            if (mysqli_num_rows($sql) > 0) {
-                            $i=0;
-                            ?>
-                            <select style="width: 300px; class="form-control" name = "MaTGH">
-                              <option></option>
-                              <?php while($row=mysqli_fetch_assoc($sql)) {
-                              $i++; ?>
+								$sql = mysqli_query($dbcon,"select MaTGH from thoigianhoc") or die(myqli_error($dbcon));
+								if (mysqli_num_rows($sql) > 0) {
+								$i=0;
+								?>
+								<select class="form-control" name = "MaTGH">
+									<option></option>
+									<?php while($row=mysqli_fetch_assoc($sql)) {
+									$i++; ?>
 
-                              <option><?php echo $row['MaTGH']; ?></option>
-                              <?php }
-                            }  ?>
-                            </select>
+									<option><?php echo $row['MaTGH']; ?></option>
+									<?php }}  ?>
+								</select>
                 </div>
                 
                 <div class="item item-table4" style="text-align: center;">
-                  <input type="submit" class="submit" value="Xác nhận" />
+                  <input type="submit" class="submit" name="tao_lophp" value="Xác nhận" />
                 </div>
               </div>
               </div>

@@ -22,12 +22,13 @@
                   >Tạo tài khoản theo danh sách</a
                 >
                 <a
-                  href="../admin/admincapnhattk.php"
+                  href="../admin/admin_CNtk.php"
                   class="list-group-item"
                   data-parent="#SubMenu1"
                 >
-                  Cập nhật tài khoản</a
+                  Cập nhật tài khoản </a
                 >
+				
               </div>
             </li>
           </ul>

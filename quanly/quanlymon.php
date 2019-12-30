@@ -2,10 +2,11 @@
 <?php require ('tao_mon.php');?>
   <?php require ("dautrang.php"); ?>
     <main>
+    <?php require ("nav.php"); ?>
       <div class="grid-container">
       <?php require ('navquanly.php');?>
         <div class="grid-item item2">
-          <div class="grid-container-table">
+          <div class="grid-table">
             <form action="quanlymon.php" method="POST">
                 <div class="item item-table1"><h3 >TẠO MÔN HỌC</h3></div>
                     <div class="form-group">
@@ -23,9 +24,6 @@
                     <div class="form-group">     
                         <div class="item item-table2"><p>Mã ngành:</p> </div>
                         <div class="item item-table3">
-                            <!-- <select  style="width: 300px;" name="MaNganh" class="form-control" required >
-                              <?php //echo $options;?>
-                            </select> -->
                             <?php
                             $sql = mysqli_query($dbcon,"select MaNganh from nganh") or die(myqli_error($dbcon));
                             if (mysqli_num_rows($sql) > 0) {

@@ -1,22 +1,37 @@
 <?php require_once("../includes/mysqli_connect.php"); ?>
-<?php require ('tao_lopmon.php'); ?>
-
   <?php require ("dautrang.php"); ?>
+  <?php
+	if (isset($_POST["capnhatlopmon"])) {
+		$MaLTM = $_POST["MaLTM"];
+		$TenLopMon = $_POST["TenLopMon"];
+		$MaMon = $_POST["MaMon"];
+		$MaGV = $_POST["MaGV"];         
+		$sql = "UPDATE lopmonhoc SET TenLopMon = '$TenLopMon', MaMon = '$MaMon', MaGV = '$MaGV' WHERE MaLTM = '$MaLTM'";
+		mysqli_query($dbcon,$sql);
+		//header('Location: quanly_CNLmon.php');      
+	}
+    $id = -1; if (isset($_GET['id'])) {	$id = $_GET['id'];}
+	$sql = "SELECT * FROM lopmonhoc WHERE MaLTM = '$id'";
+	$query = mysqli_query($dbcon,$sql);
+?>
     <main>
     <?php require ("nav.php"); ?>
       <div class="grid-container">
-        <?php require ('navquanly.php');?>
+      <?php require ("navquanly.php"); ?>
         <div class="grid-item item2">
-        <form action="quanlylopmon.php" method="POST">
+        <?php while ( $data = mysqli_fetch_array($query) ) { ?>
+        <form action="capnhatlopmon.php" method="POST">
           <div class="grid-container-table">
             <div class="item item-table1"><h3 >TẠO LỚP MÔN HỌC</h3></div>
             <div class="item item-table2"><p>Tên lớp môn:</p></div>
             <div class="item item-table3">
-              <input type="text"  value="" name="TenLopMon" class="form-control" required  />
+              <input type="text"  value="<?php echo $data['TenLopMon']; ?>" 
+              name="TenLopMon" class="form-control" required  />
             </div>
             <div class="item item-table4"><p>Mã lớp môn:</p> </div>
             <div class="item item-table5">
-              <input type="text" value=""  name="MaLTM" class="form-control" required  />
+              <input type="text" value="<?php echo $data['MaLTM']; ?>"  
+              name="MaLTM" class="form-control" required  />
             </div>
             <div class="item item-table6"><p>Mã Môn:</p> </div>
             <div class="item item-table7">
@@ -26,7 +41,7 @@
                 $i=0;
                 ?>
                 <select  class=" form-control" name="MaMon">
-                <option></option>
+                <option><?php echo $data['MaMon']; ?></option>
                 <?php while($row=mysqli_fetch_assoc($sql)) {
                 $i++; ?>
 
@@ -43,7 +58,7 @@
                 $i=0;
                 ?>
                 <select  class=" form-control" name="MaGV">
-                <option></option>
+                <option><?php echo $data['MaGV']; ?></option>
                 <?php while($row=mysqli_fetch_assoc($sql)) {
                 $i++; ?>
 
@@ -54,14 +69,14 @@
             </div>
           
             <div class="item item-table8" style="text-align: center;">
-              <input type="submit" name="tao_lopmon" class="submit" value="Xác nhận" />
+              <input type="submit" name="capnhatlopmon" class="submit" value="Cập Nhật" />
             </div>
             
           </div>
-          <?php echo $message; ?> 
           </form>
-          </div>
-          
-                             
+          <?php } ?>
+        </div>
+        <div class="grid-item item3"></div>
+      </div>
     </main>
     <?php require ("chantrang.php"); ?>
