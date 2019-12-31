@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php require_once("../includes/mysqli_connect.php"); ?>
+<?php require ( 'mysqli_connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,7 +57,8 @@
       </div>
     </header>
 
-    <?php
+    
+<?php
           
           if(isset($_SESSION['email']))
           {
@@ -67,8 +68,7 @@
             $query = mysqli_query($dbcon,$sql);
             $data = mysqli_fetch_array($query);
             $id = $data['MaTK'];
-            // $MaGV = $data["MaGV"];
-            // $MaQL = $data["MaQL"];
+            
 
             if($data['CapDo'] == 2)
             {

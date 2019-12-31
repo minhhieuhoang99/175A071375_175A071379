@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        mysqli_stmt_execute($q);
 
 $result = mysqli_stmt_get_result($q);
-
+$data = mysqli_fetch_array($query);
 $row = mysqli_fetch_array($result, MYSQLI_NUM);
 if (mysqli_num_rows($result) == 1) {
           //if one database row (record) matches the input:-
@@ -50,7 +50,7 @@ if (mysqli_num_rows($result) == 1) {
                     //           'members-page.php'; 
                     //           header('Location: ' . $url);           
                     $_SESSION['CapDo'] = $row[3];
-
+                    $_SESSION['email'] =  $data["email"];
                     if($row[3]==3)
                     header('Location: GiangVien/giangvien.php');
                     else if($row[3]==1)
