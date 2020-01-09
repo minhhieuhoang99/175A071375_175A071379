@@ -20,9 +20,9 @@
       <thead class="thead-light">
         <tr>
           
+          <th scope="col">Mã ngành</th>
           <th scope="col">Mã môn học</th>
           <th scope="col">Tên môn học</th>
-          <th scope="col">Mã ngành học</th>
           <th scope="col">Sửa</th>
           <th scope="col">Xóa</th>
 

@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-<?php require_once("../includes/mysqli_connect.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,49 +54,3 @@
         </div>
       </div>
     </header>
-
-    <?php
-          
-          if(isset($_SESSION['email']))
-          {
-            $email = $_SESSION['email'];
-            
-            $sql = "SELECT * from taikhoan where email = '$email'";
-            $query = mysqli_query($dbcon,$sql);
-            $data = mysqli_fetch_array($query);
-            $id = $data['MaTK'];
-            // $MaGV = $data["MaGV"];
-            // $MaQL = $data["MaQL"];
-
-            if($data['CapDo'] == 2)
-            {
-              $MaQL = $_SESSION['MaQL'];
-              $data['HoTenQL'] = $_SESSION['HoTenQL'];
-              $sql = "SELECT * from quanly where MaQL = '$MaQL'";
-              $query = mysqli_query($dbcon,$sql);
-              $data = mysqli_fetch_array($query);
-              echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$data['HoTenQL']. " (".$MaQL.") <span style='color:#000'>  Vai trò:</span> Quản lý</div>";
-            }
-
-            else if($data['CapDo'] == 3)
-            {
-              $MaGV = $_SESSION['MaGV'];
-              $sql = "SELECT * from giangvien where MaGV = '$MaGV'";
-              $query = mysqli_query($dbcon,$sql);
-              $data = mysqli_fetch_array($query);
-              echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$data['HoTenGV']. " (".$MaGV.") <span style='color:#000'>  Vai trò:</span> Giảng viên</div>";
-
-            }
-
-            else
-            {
-              echo "<div style='color:blue; padding:5px 30px;'> Khách </div>";
-            }
-          }
-
-          else
-          {
-            echo "<div style='color:blue; padding:5px 30px;'> Khách </div>";
-          }
-          
-          ?>

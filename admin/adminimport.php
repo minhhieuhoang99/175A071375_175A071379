@@ -115,7 +115,7 @@ if (mysqli_num_rows($result) > 0)
 ?>
         
     <table class='table'>
-        <thead>
+        <thead class="thead-light" >
             <tr>
             
                 <th>TenTaiKhoan</th>

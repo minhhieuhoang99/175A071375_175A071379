@@ -55,17 +55,34 @@ try {
 				// Make the query:                                               
 				$query = "INSERT INTO taikhoan (MaTK, TenTaiKhoan, email, MatKhau , CapDo , NgayTao) ";
 				$query .="VALUES(' ', ?, ?, ? ,? , NOW())";		                
-				$q = mysqli_stmt_init($dbcon);                                  
-				mysqli_stmt_prepare($q, $query);
+				$q = mysqli_stmt_init($dbcon);                                  			
+				mysqli_stmt_prepare($q, $query);		
 				// use prepared statement to insure that only text is inserted
 				// bind fields to SQL Statement
 				mysqli_stmt_bind_param($q, 'ssss', $tentaikhoan, $email, $hashed_passcode ,$capdo);
-			// execute query
 				mysqli_stmt_execute($q);
-				if (mysqli_stmt_affected_rows($q) == 1) {	// One record inserted			
-				header ("location: thank.html"); 
-				exit();
-				} else { // If it did not run OK.
+				if (mysqli_stmt_affected_rows($q) == 1) 
+					{	// One record inserted			
+						
+						$query = "SELECT MaTK, MatKhau, NgayTao, CapDo FROM taikhoan WHERE email=$email";
+						$sql = mysqli_query($dbcon,$query);
+						$data = mysqli_fetch_array($sql);
+						$query1 ="INSERT INTO giangvien (MaGV, HoTenGV, NgaySinh, DiaChi , MaTK ) ";
+						$query1 .="VALUES('a', ?, ?, ? ,? )";
+						$q1 = mysqli_stmt_init($dbcon);	
+						mysqli_stmt_prepare($q1, $query1);	
+						mysqli_stmt_bind_param($q1, 'ssss', $ten, $ngaysinh, $diachi ,$data['MaTK']);	
+							
+						if (mysqli_stmt_affected_rows($q1) == 1)
+						{
+							header ("location: admin_CNtk.php");
+							echo 'thành công ';
+						}
+						else { echo 'thất bại khi thêm vào bảng giảng viên';}
+					
+						exit();
+					} 
+				else { // If it did not run OK.
 				// Public message:
 					$errorstring = "<p class='text-center col-sm-8' style='color:red'>";
 					$errorstring .= "System Error<br />You could not be registered due ";
@@ -90,7 +107,7 @@ try {
 				//require ('mysqli_connect.php'); // Connect to the db.     
 				// Make the query:                                               
 				$query = "INSERT INTO taikhoan (MaTK, TenTaiKhoan, email, MatKhau , CapDo , NgayTao) ";
-				$query .="VALUES(' ', ?, ?, ?, ?, NOW() )";		                
+				$query .="VALUES('a', ?, ?, ?, ?, NOW() )";	                
 				$q = mysqli_stmt_init($dbcon);                                  
 				mysqli_stmt_prepare($q, $query);
 				// use prepared statement to insure that only text is inserted
@@ -98,10 +115,30 @@ try {
 				mysqli_stmt_bind_param($q, 'ssss', $tentaikhoan, $email, $hashed_passcode, $capdo);
 			// execute query
 				mysqli_stmt_execute($q);
-				if (mysqli_stmt_affected_rows($q) == 1) {	// One record inserted			
-				header ("location: thank.html"); 
-				exit();
-				} else { // If it did not run OK.
+				if (mysqli_stmt_affected_rows($q) == 1) 
+					{	// One record inserted
+						
+						$query = "SELECT MaTK, MatKhau, NgayTao, CapDo FROM taikhoan WHERE email=$email";
+						$sql = mysqli_query($dbcon,$query);
+						$data = mysqli_fetch_array($sql);
+						$query1 ="INSERT INTO quanly (MaQL, HoTenQL, NgaySinh, DiaChi , MaTK ) ";
+						$query1 .="VALUES('', ?, ?, ? ,? )";
+						$q1 = mysqli_stmt_init($dbcon);	
+						mysqli_stmt_prepare($q1, $query1);	
+						mysqli_stmt_bind_param($q1, 'ssss', $ten, $ngaysinh, $diachi ,$data['MaTK']);	
+							
+							if (mysqli_stmt_affected_rows($q1) == 1)
+							{
+								header ("location: admin_CNtk.php");
+								echo 'thành công ';
+							}
+							else { echo 'thất bại khi thêm vào bảng quản lý';}
+						
+							
+
+						exit();
+					} 
+				else { // If it did not run OK.
 				// Public message:
 					$errorstring = "<p class='text-center col-sm-8' style='color:red'>";
 					$errorstring .= "System Error<br />You could not be registered due ";

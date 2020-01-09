@@ -1,8 +1,9 @@
 <div class="grid-nav">
         <div class="grid-item item1" style="margin-left: 17px;">
-          <span id="navbar"><a href="/CMCSoft.IU.Web.Info/Home.aspx" >Trang chủ</a> |
+          <span id="navbar"><a href="../index.php" >Trang chủ</a> |
             
             <a href="./support/default.aspx" target="_blank">Hỏi đáp</a> | 
+            <span id="navbar"><a href="../login.php" >Thoát</a>
         </div>
         <div class="grid-item item2"></div>
         <div class="grid-item item3" style="margin-right: 20px;">
