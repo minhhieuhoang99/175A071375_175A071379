@@ -36,23 +36,7 @@
         <div class="grid-item"></div>
       </div>
 
-      <div id="box_user">
-        <div id="PageHeader_Panel">
-          <p>
-            <span id="PageHeader_lblUserFullName" style="font-weight:bold;"
-              >Đinh Việt Đức(175A071379)</span
-            >
-            <span
-              id="PageHeader_lblRoleTitle "
-              style="color: #bcbabe; font-size: 15px;"
-              >Vai trò:</span
-            >
-            <span id="PageHeader_lblUserRole">Giảng viên</span>
-
-            <a id="PageHeader_lbNewmessage" href="#">Hộp tin nhắn</a>
-          </p>
-        </div>
-      </div>
+      
     </header>
     <main>
       <div class="wrapper fadeInDown">
