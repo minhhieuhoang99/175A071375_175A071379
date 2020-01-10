@@ -36,7 +36,7 @@
         <div class="grid-item"></div>
       </div>
 
-      <div id="box_user">
+      <!-- <div id="box_user">
         <div id="PageHeader_Panel">
           <p>
             <span id="PageHeader_lblUserFullName" style="font-weight:bold;"
@@ -51,6 +51,6 @@
 
             <a id="PageHeader_lbNewmessage" href="#">Hộp tin nhắn</a>
           </p>
-        </div>
+        </div> -->
       </div>
     </header>

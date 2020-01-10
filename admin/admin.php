@@ -1,4 +1,4 @@
-<?php require ("dautrang.php"); ?>
+<?php require ("../includes/dautrang.php"); ?>
     <main>
       <div class="grid-container">
       <?php require ("navadmin.php"); ?>
@@ -7,4 +7,4 @@
       </div>
       
     </main>
-    <?php require ("chantrang.php"); ?>
+<?php require ("../includes/chantrang.php"); ?>

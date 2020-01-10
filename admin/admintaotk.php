@@ -1,6 +1,6 @@
-<?php require ("dautrang.php"); ?>
+<?php require ("../includes/dautrang.php"); ?>
     <main>
-	<?php require ("nav.php"); ?>
+	<?php require ("../includes/nav.php"); ?>
       <div class="grid-container">
       <?php require ("navadmin.php"); ?>
         <div class="grid-item item2">
@@ -50,6 +50,22 @@
                                   </div>
                               </div>
                               <div class="form-group row">
+                                  <label for="email" class="col-sm-4 col-form-label">Mã Quản Lý/Mã Giảng Viên :</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control" id="ma" name="ma" placeholder="Mã Quản Lý / Mã Giảng Viên"
+                                          maxlength="60" required
+                                          value="<?php if (isset($_POST['ma'])) echo $_POST['ma']; ?>">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="email" class="col-sm-4 col-form-label">Mã Tài Khoản :</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control" id="matk" name="matk" placeholder="Mã Tài Khoản"
+                                          maxlength="60" required
+                                          value="<?php if (isset($_POST['matk'])) echo $_POST['matk']; ?>">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
                                   <label for="ngaysinh" class="col-sm-4 col-form-label">Ngày Sinh:</label>
                                   <div class="col-sm-8">
                                       <input type="date" class="form-control" id="ngaysinh" name="ngaysinh" placeholder="Ngày Sinh"
@@ -87,7 +103,7 @@
                               </div>
                               <div class="form-group row">
                                   <div class="col-sm-6">
-                                      <input id="submit" class="btn btn-primary" type="submit" name="submit" value="Register">
+                                      <input id="Register" class="btn btn-primary" type="submit" name="Register" value="Register">
                                   </div>
                               </div>
                           </form>
@@ -117,4 +133,4 @@
         </div>
       </div>
     </main>
-    <?php require ("chantrang.php"); ?>
+<?php require ("../includes/dautrang.php"); ?>

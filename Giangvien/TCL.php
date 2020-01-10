@@ -1,6 +1,6 @@
 
 <?php require_once("../includes/mysqli_connect.php"); ?>
-<?php require ("dautrang.php"); ?>
+<?php require ("../includes/dautrang.php"); ?>
 <?php error_reporting(0);
 ini_set('display_errors', 0);?>
 
@@ -19,7 +19,7 @@ ini_set('display_errors', 0);?>
 
 
     <main>
-	<?php require ("nav.php"); ?>
+	<?php require ("../includes/nav.php"); ?>
 	<div class="grid-container">
       <?php require ("navgiangvien.php"); ?>
         <div class="grid-item item2">
@@ -77,5 +77,5 @@ ini_set('display_errors', 0);?>
             
 
     </main>
-    <?php require ("chantrang.php"); ?>
+    <?php require ("../includes/chantrang.php"); ?>
     

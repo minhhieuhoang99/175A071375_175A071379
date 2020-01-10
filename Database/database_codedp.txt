@@ -5,7 +5,7 @@ TenTaiKhoan varchar(30) ,
  email varchar(30),
  CapDo tinyint,
  NgayTao datetime,
- MaTK int(10) NOT NULL AUTO_INCREMENT  Primary Key
+ MaTK varchar(10) NOT NULL  Primary Key
 );
 
 Create Table nganh(
@@ -17,7 +17,7 @@ Create Table nganh(
  HoTenGV varchar(30),
  NgaySinh date,
  DiaChi varchar(30),
- MaTK int(10) ,foreign key (MaTK) references TaiKhoan(MaTK) 
+ MaTK varchar(10) ,foreign key (MaTK) references TaiKhoan(MaTK) 
 
  );
 Create Table mon(
@@ -35,14 +35,15 @@ Create Table quanly(
  HoTenQL varchar(30),
  NgaySinh date,
  DiaChi varchar(30),
- MaTK int(10) ,foreign key (MaTK) references TaiKhoan(MaTK)
+ MaTK varchar(10) ,foreign key (MaTK) references TaiKhoan(MaTK)
 );
 Create Table thoigianhoc(
 NamHoc date,
 HocKy tinyint,
+GiaiDoan varchar(3),
 NgayBatDau date,
 NgayKetThuc date,
-MaTGH varchar(10) Primary Key
+MaTGH varchar(20) Primary Key
 );
 Create Table lopmonhoc(
 MaLTM varchar(10) Primary Key,
@@ -66,10 +67,11 @@ MaLTM varchar(10) , foreign key (MaLTM) references lopmonhoc(MaLTM)
 Create Table LopHocPhan(
 TenLopHP varchar(30) ,  
 MaLHP varchar(10) Primary Key,
-MaTGH varchar(10) ,foreign key (MaTGH) references ThoiGianHoc(MaTGH)
+MaTGH varchar(20) ,foreign key (MaTGH) references ThoiGianHoc(MaTGH)
 );
 Create Table CTLopHP(
 TenLopMon varchar(30) ,
 MaLTM varchar(10) ,foreign key (MaLTM) references LopMonHoc(MaLTM),
 MaLHP varchar(10) ,foreign key (MaLHP) references LopHocPhan(MaLHP)
 );
+

@@ -1,7 +1,7 @@
-
-  <?php require ("dautrang.php"); ?>
+<!-- 
+<?php require ("../includes/dautrang.php"); ?>
     <main>
-    <?php require ("nav.php"); ?>
+    <?php require ("../includes/nav.php"); ?>
       <div class="grid-container">
       <?php require ('navquanly.php');?>
         <div class="grid-item item2">
@@ -55,4 +55,4 @@
         </div>
       </div>
     </main>
-    <?php require ("chantrang.php"); ?>
+    <?php require ("../includes/chantrang.php"); ?> -->

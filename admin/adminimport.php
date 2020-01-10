@@ -1,4 +1,4 @@
-<?php require ("dautrang.php"); ?>
+<?php require ("../includes/dautrang.php"); ?>
 <?php require_once("../includes/mysqli_connect.php"); ?>
 <?php
 error_reporting(0);
@@ -85,6 +85,7 @@ if (isset($_POST["import"]))
 }
 ?>    
 <main>
+<?php require ("../includes/nav.php"); ?>
       <div class="grid-container">
       <?php require ("navadmin.php"); ?>
         <div class="grid-item item2">
@@ -154,4 +155,4 @@ if (mysqli_num_rows($result) > 0)
       </div>
       
     </main>
-    <?php require ("chantrang.php"); ?>
+    <?php require ("../includes/chantrang.php"); ?>

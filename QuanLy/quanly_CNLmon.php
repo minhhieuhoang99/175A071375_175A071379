@@ -12,7 +12,7 @@
 	}
 ?>
 <main>
-<?php require ("nav.php"); ?>
+<?php require ("../includes/nav.php"); ?>
       <div class="grid-container">
       <?php require ("navquanly.php"); ?>
         <div class="grid-item item2">
@@ -54,4 +54,4 @@
     </main>
     
         
-<?php require ("chantrang.php"); ?>
+    <?php require ("../includes/chantrang.php"); ?>
