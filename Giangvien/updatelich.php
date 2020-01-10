@@ -11,7 +11,7 @@ ini_set('display_errors', 0);?>
         
 		$sql = "SELECT * FROM giangvien, lopmonhoc, ctlophp, lichtrinhthucte  WHERE  giangvien.MaGV = lopmonhoc.MaGV AND giangvien.HoTenGV = '$nhapthongtin' AND lopmonhoc.MaLTM = ctlophp.MaLTM AND  lichtrinhthucte.MaLTM = ctlophp.MaLTM";
         $query = mysqli_query($dbcon,$sql);
-		$MaLTM = $row['MaLTM'];
+		
 	
     }
 	
@@ -52,7 +52,7 @@ ini_set('display_errors', 0);?>
                       <tr>
                             <?php 
                                 while ( $data = mysqli_fetch_array($query)) {
-                                
+                                    $MaLTM = $data['MaLTM'];
                                     
                             ?>
                             
@@ -79,5 +79,5 @@ ini_set('display_errors', 0);?>
             
 
     </main>
-    <?php require ("../includes/dautrang.php"); ?>
+    <?php require ("../includes/chantrang.php"); ?>
     
