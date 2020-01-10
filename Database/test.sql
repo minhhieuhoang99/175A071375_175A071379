@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 10, 2020 lúc 10:25 AM
+-- Thời gian đã tạo: Th1 10, 2020 lúc 11:24 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.1
 
@@ -130,7 +130,7 @@ CREATE TABLE `lichtrinhthucte` (
 INSERT INTO `lichtrinhthucte` (`MaLTTT`, `BaiHocTT`, `DiaDiemTT`, `ThoiGianTT`, `MaLTM`) VALUES
 ('1', 'Bài Mở Đầu', '305B5', '0000-00-00 00:00:00', 'CSE1'),
 ('2', 'Bài Mở Đầu', '305B5', '0000-00-00 00:00:00', 'PTTK1'),
-('3', 'Bài Mở Đầu', '305B5', '0000-00-00 00:00:00', 'LTNC1'),
+('3', 'Bài Mở Đầu aaaaaaaaaaaaaaaaaaa', '305B5', '2020-01-16 00:00:00', 'LTNC1'),
 ('4', 'Bài Mở Đầu', '304B5', '0000-00-00 00:00:00', 'CSE2');
 
 -- --------------------------------------------------------
@@ -194,7 +194,7 @@ CREATE TABLE `mon` (
 --
 
 INSERT INTO `mon` (`TenMon`, `MaMon`, `MaNganh`) VALUES
-('Công Nghệ Web', 'CSE', 'CNTT'),
+('Công Nghệ Web ', 'CSE', 'CNTT'),
 ('Lập Trình Nâng Cao', 'LTNC', 'CNTT'),
 ('Phân Tích Thiết Kế Hệ Thống', 'PTTK', 'CNTT');
 
@@ -214,7 +214,7 @@ CREATE TABLE `nganh` (
 --
 
 INSERT INTO `nganh` (`MaNganh`, `TenNganh`) VALUES
-('CNTT', 'Công Nghệ Thông Tin');
+('CNTT', 'Công Nghệ Thông Tin ');
 
 -- --------------------------------------------------------
 
@@ -257,7 +257,7 @@ CREATE TABLE `taikhoan` (
 --
 
 INSERT INTO `taikhoan` (`TenTaiKhoan`, `MatKhau`, `email`, `CapDo`, `NgayTao`, `MaTK`) VALUES
-('admin', '$2y$10$jomuW4plcEjBUz.oiXqglercbt/6FES6IT6/b27jgvSs16kR5Bjf6', 'mail@gmail.com', 1, '2020-01-10 00:00:00', '1'),
+('admin', '$2y$10$jomuW4plcEjBUz.oiXqglercbt/6FES6IT6/b27jgvSs16kR5Bjf6', 'mail@gmail.com', 2, '2020-01-10 00:00:00', '1'),
 ('quanly', '$2y$10$jomuW4plcEjBUz.oiXqglercbt/6FES6IT6/b27jgvSs16kR5Bjf6', 'mail1@gmail.com', 2, '2020-01-10 00:00:00', '2'),
 ('giangvien', '$2y$10$jomuW4plcEjBUz.oiXqglercbt/6FES6IT6/b27jgvSs16kR5Bjf6', 'mail2@gmail.com', 3, '2020-01-10 00:00:00', '3'),
 ('giangvien1', '$2y$10$jomuW4plcEjBUz.oiXqglercbt/6FES6IT6/b27jgvSs16kR5Bjf6', 'mail3@gmail.com', 3, '2020-01-10 00:00:00', '4');
