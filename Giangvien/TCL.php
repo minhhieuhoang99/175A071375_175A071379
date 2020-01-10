@@ -35,6 +35,7 @@ ini_set('display_errors', 0);?>
             </form>
             </div>
                 <div>
+				
                 <table class="table">
                         <thead class="thead-light">
                             <tr>
@@ -46,14 +47,15 @@ ini_set('display_errors', 0);?>
 							<th scope="col">Thời Gian</th>
                             </tr>
                         </thead>
-                        <tbody>
-						
-                      <tr>
-                            <?php 
+						<?php 
                                 while ( $data = mysqli_fetch_array($query)) {
                                 
                                     
                             ?>
+                        <tbody>
+						
+                      <tr>
+                            
                             
 							<td><?php echo $data["TenLopMon"];?></td>
 							<td><?php echo $data["MaLTM"];?></td>

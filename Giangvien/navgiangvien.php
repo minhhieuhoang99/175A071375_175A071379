@@ -7,7 +7,7 @@
               <a href="TCL.php">Kế Hoạch Giảng Dạy</a>
             </li>
             <li class="list-group-item list-group-item-action">
-              <a href="">Lịch Trình Thực Tế</a>
+              <a href="updatelich.php">Lịch Trình Thực Tế</a>
             </li>
           </ul>
         </div>

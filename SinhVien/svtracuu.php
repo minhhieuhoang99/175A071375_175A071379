@@ -27,7 +27,7 @@ ini_set('display_errors', 0); ?>
             <form action="svtracuu.php" method="post" >
             
             <div class="form-group">
-                <label for="exampleInputPassword1">Tên Lớp</label>
+                <label for="exampleInputPassword1">Nhập tên giảng viên</label>
                 <input type="text" class="form-control" id="nhapthongtin" name="nhapthongtin">
             </div>
             
@@ -35,11 +35,7 @@ ini_set('display_errors', 0); ?>
             </form>
             </div>
                 <div>
-                <?php 
-                                while ( $data = mysqli_fetch_array($query)) {
-                                
-                                    
-                            ?>
+               
                 <table class="table" style ="font-size:14px;">
                         <thead class="thead-light">
                             <tr>
@@ -53,6 +49,11 @@ ini_set('display_errors', 0); ?>
 							<th scope="col">Thời Gian Thực Tế</th>
                             </tr>
                         </thead>
+						 <?php 
+                                while ( $data = mysqli_fetch_array($query)) {
+                                
+                                    
+                            ?>
                         <tbody>
 						
                       <tr>

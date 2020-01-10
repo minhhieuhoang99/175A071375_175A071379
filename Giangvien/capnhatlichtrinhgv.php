@@ -17,7 +17,7 @@
     <main>
     <?php require ("../includes/nav.php"); ?>
       <div class="grid-container">
-      <?php require ("navquanly.php"); ?>
+      <?php require ("navgiangvien.php"); ?>
         <div class="grid-item item2">
         <?php while ( $data = mysqli_fetch_array($query) ) { ?>
         <form action="capnhatgiangvien.php" method="POST">
