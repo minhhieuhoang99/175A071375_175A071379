@@ -1,6 +1,6 @@
 
 <?php require_once("../includes/mysqli_connect.php"); ?>
-<?php require ("../includes/dautrang.php"); ?>
+<?php require ("dautrang.php"); ?>
 <?php error_reporting(0);
 ini_set('display_errors', 0);?>
 
@@ -12,9 +12,10 @@ ini_set('display_errors', 0);?>
         
         $sql1 = "SELECT * FROM giangvien WHERE hoTenGV = '$nhapthongtin'";
         $query1 = mysqli_query($dbcon,$sql1);
+		
+		$sql = "SELECT MaLHP FROM ctlophp WHERE MaLTM = (SELECT MaLTM FROM lopmonhoc WHERE MaGV =(SELECT MaGV FROM giangvien WHERE HoTenGV like '$nhapthongtin'))";
+        $query = mysqli_query($dbcon,$sql);  
 
-        $sql2 = "SELECT * FROM ctlophp WHERE MaLTM = (SELECT MaLTM FROM lopmonhoc WHERE MaGV =(SELECT MaGV FROM giangvien WHERE HoTenGV like '$nhapthongtin'))";
-        $query2 = mysqli_query($dbcon,$sql2);        
         
     }
 	
@@ -22,12 +23,12 @@ ini_set('display_errors', 0);?>
 
 
     <main>
-	<?php require ("../includes/nav.php"); ?>
+	<?php require ("nav.php"); ?>
 	<div class="grid-container">
       <?php require ("navgiangvien.php"); ?>
         <div class="grid-item item2">
 		<div class="main">
-            <form action="tracuulop.php" method="post" >
+            <form action="lichtrinhgiangday.php" method="post" >
             
             <div class="form-group">
                 <label for="exampleInputPassword1">Thông tin giảng viên</label>
@@ -42,14 +43,12 @@ ini_set('display_errors', 0);?>
                         <thead class="thead-light">
                             <tr>
                             <th scope="col">Tên giảng viên</th>
-							<th scope="col">Mã giảng viên</th>
+                            <th scope="col">Mã Giảng Viên </th>
                             <th scope="col">Tên Lớp Môn</th>
-							<th scope="col">Tên Lớp HP</th>
-							<th scope="col">Mã Lớp HP</th>
+							<th scope="col">Mã Lớp Môn</th>
                             </tr>
                         </thead>
                         <tbody>
-						
                         <?php 
                                 while ( $data1 = mysqli_fetch_array($query1)) {
                                 
@@ -58,10 +57,7 @@ ini_set('display_errors', 0);?>
                             <tr>
                             <td scope="row"><?php echo $data1['HoTenGV']; ?></td>
                             
-                            <?php 
-			$i++;
-		}
-	?>
+                            <?php } ?>
                             <?php 
                                 while ( $data = mysqli_fetch_array($query)) {
                                 
@@ -69,25 +65,16 @@ ini_set('display_errors', 0);?>
                             ?>
                             <td scope="row"><?php echo $data['MaGV']; ?></td>
                             <td scope="row"><?php echo $data['TenLopMon']; ?></td>
-
-							
+							<td scope="row"><?php echo $data['MaLTM']; ?></td>
                             
-                            <?php 
-			$i++;
-		}
-	?>
+                            <?php } ?>
                             <?php 
                                 while ( $data2 = mysqli_fetch_array($query2)) {
                                 
                                     
                             ?>
-							<td scope="row"><?php echo $data2['TenLopHP']; ?></td>
-                            <td scope="row"><?php echo $data2['MaLHP']; ?></td>
-							</tr>
-                            <?php 
-			$i++;
-		}
-	?>
+                          
+                            <?php } ?>
                         </tbody>
 			        </table>
                 </div>
@@ -98,5 +85,5 @@ ini_set('display_errors', 0);?>
             
 
     </main>
-    <?php require ("../includes/chantrang.php"); ?>
+    <?php require ("chantrang.php"); ?>
     

@@ -89,7 +89,7 @@
                 </div>
               </li>
 			        <li class="nav-item dropdown">
-                <a class="nav-link " href="login.php" id="" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link " href="dangnhap.php" id="" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
                   ĐĂNG NHẬP
                 </a>                
               </li>
@@ -183,7 +183,7 @@
             <h2>Danh Mục Chính</h2>
             <ul class="list-group">
               
-              <li class="list-group-item"><a href="#" >Tra Cứu Lịch</a></li>
+              <li class="list-group-item"><a href="SinhVien/svtracuu.php" >Tra Cứu Lịch</a></li>
               <li class="list-group-item"><a href="#" >Chương Trình Đào Tạo</a></li>
               <li class="list-group-item"><a href="#" >Giảng Đường Trực Tuyến</a></li>
             </ul>
